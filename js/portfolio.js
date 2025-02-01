@@ -16,9 +16,9 @@ const projects = [
     {
         title: "EXAMPLE SITE",
         description: "EXAMPLE DESCRIPTION.",
-        image: "images/project3.jpg",
+        image: "assets/portfolio/hardwoodhero.jpg",
         tech: ["HTML", "CSS", "JavaScript"],
-        link: "#"
+        link: "https://hardwoodherodsm.com"
     }
 ];
 
@@ -27,14 +27,16 @@ function createProjectCard(project) {
         <article class="project-card">
             <div class="project-image">
                 <img src="${project.image}" alt="${project.title}">
-                <div class="project-overlay">
-                    <a href="${project.link}" class="view-project">View Details</a>
-                </div>
             </div>
-            <h3>${project.title}</h3>
-            <p>${project.description}</p>
-            <div class="tech-stack">
-                ${project.tech.map(tech => `<span>${tech}</span>`).join('')}
+            <div class="project-details">
+                <h3>${project.title}</h3>
+                <p>${project.description}</p>
+                <div class="tech-stack">
+                    ${project.tech.map(tech => `<span>${tech}</span>`).join('')}
+                </div>
+                <a href="${project.link}" class="project-button">
+                    View Project <i class="fas fa-arrow-right"></i>
+                </a>
             </div>
         </article>
     `;

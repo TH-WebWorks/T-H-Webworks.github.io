@@ -1,15 +1,30 @@
 <nav class="navbar">
-    <div class="logo">LOCAL STUDIO</div>
-    <dix class="nav-links">
+    <div class="logo">
+        <img src="assets/TH_Assets/logo_nav_transparent.webp" alt="T&H WebWorks Logo">
+    </div>
+    <div class="nav-links" id="myLinks">
         <a href="index.html">Home</a>
         <a href="portfolio.html">Portfolio</a>
         <a href="contact.html">Contact</a>
         <a href="services.html">Services</a>
         <a href="faq.html">FAQ</a>
     </div>
-    <div class="hamburger">
+    <a href="javascript:void(0);" class="hamburger" onclick="toggleMenu()">
         <span></span>
         <span></span>
         <span></span>
+    </a>
+</nav>
+
+<div class="mobile-menu hidden">
+    <button id="close-menu">×</button>
+    <div class="mobile-nav-links">
+        <a href="index.html">Home</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html">Contact</a>
+        <a href="services.html">Services</a>
+        <a href="faq.html">FAQ</a>
     </div>
-</nav> 
+</div> 
+
+<script src="js/nav.js"></script>

@@ -3,53 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQ - Local Studio</title>
+    <title>FAQ - T&H WebWorks</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&family=DM+Sans:wght@400;500;600&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
     <main class="faq-page">
-        <h1>FAQ</h1>
-        <p class="faq-intro">Common questions about our process and services.</p>
+        <div class="page-header">
+            <h1>FAQ</h1>
+            <p>Find answers to common questions about our services and process.</p>
+        </div>
         
+        <div class="faq-categories">
+            <button class="faq-category active">General</button>
+            <button class="faq-category">Process</button>
+            <button class="faq-category">Technical</button>
+            <button class="faq-category">Pricing</button>
+        </div>
+
         <div class="faq-grid">
-            <div class="faq-item">
+            <!-- General -->
+            <div class="faq-item" data-category="general">
                 <div class="faq-question">
-                    <h3>How long does a typical project take?</h3>
+                    <h3>What makes your web development different?</h3>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>Most projects take 6-12 weeks from start to finish. Basic websites typically take 6-8 weeks, while complex platforms can take 12-16 weeks.</p>
+                    <p>We build custom, hand-coded websites without using templates or page builders. This ensures faster loading times, better SEO performance, and a truly unique design that matches your brand.</p>
                 </div>
             </div>
 
-            <div class="faq-item">
+            <div class="faq-item" data-category="general">
                 <div class="faq-question">
-                    <h3>What's your development process?</h3>
+                    <h3>How long does it take to build a website?</h3>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>We follow a structured process: Discovery → Design → Development → Testing → Launch. You'll receive regular updates and previews throughout.</p>
+                    <p>Most projects take 4-6 weeks from start to finish. This includes the discovery phase, design, development, and revisions. Complex projects may take longer, while simple landing pages can be completed in 2-3 weeks.</p>
                 </div>
             </div>
 
-            <div class="faq-item">
+            <!-- Technical -->
+            <div class="faq-item" data-category="technical">
                 <div class="faq-question">
-                    <h3>Do you offer ongoing support?</h3>
+                    <h3>Will my website work on mobile devices?</h3>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>Yes, we offer various maintenance plans to keep your site secure and up-to-date. Check our Services page for detailed maintenance packages.</p>
+                    <p>Absolutely! We build all websites with a mobile-first approach, ensuring they look and function perfectly on all devices, from smartphones to desktop computers.</p>
                 </div>
             </div>
 
-            <div class="faq-item">
+            <!-- Process -->
+            <div class="faq-item" data-category="process">
                 <div class="faq-question">
-                    <h3>What's included in the price?</h3>
+                    <h3>What do you need from me to get started?</h3>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>Our prices include design, development, testing, and launch. We also include 30 days of post-launch support to ensure everything runs smoothly.</p>
+                    <p>To begin, we'll need:</p>
+                    <ul>
+                        <li>Your brand assets (logo, colors, etc.)</li>
+                        <li>Content for your website</li>
+                        <li>Examples of websites you like</li>
+                        <li>A clear understanding of your goals</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Pricing -->
+            <div class="faq-item" data-category="pricing">
+                <div class="faq-question">
+                    <h3>Do you offer maintenance plans?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, we offer flexible maintenance plans that include regular updates, security monitoring, backups, and content updates. You can choose the plan that best fits your needs.</p>
                 </div>
             </div>
         </div>
@@ -57,5 +88,6 @@
 
     <script src="js/components.js"></script>
     <script src="js/faq.js"></script>
+    <script src="js/nav.js"></script>
 </body>
 </html> 
