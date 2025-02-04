@@ -1828,3 +1828,222 @@ p,
     pointer-events: none;
 }
 
+.error-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--page-padding);
+    text-align: center;
+}
+
+.error-code {
+    font-size: clamp(4rem, 15vw, 8rem);
+    font-weight: 600;
+    background: var(--gradient-multi);
+    -webkit-background-clip: text;
+    color: transparent;
+    font-family: var(--font-ui);
+    line-height: 1;
+    margin-bottom: 1rem;
+}
+
+.error-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+    .error-actions {
+        flex-direction: column;
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+/* Testimonials Styles */
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: var(--content-width);
+    margin: 0 auto;
+    padding: var(--page-padding);
+}
+
+.testimonial-card {
+    background: linear-gradient(145deg, var(--dark-gray), var(--accent));
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+}
+
+.testimonial-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.testimonial-header img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.client-info h3 {
+    color: var(--white);
+    font-size: 1.25rem;
+    margin-bottom: 0.25rem;
+}
+
+.client-info p {
+    color: var(--gray);
+    font-size: 0.875rem;
+}
+
+.testimonial-content {
+    color: var(--gray);
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.case-study-link {
+    color: var(--primary);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: gap 0.3s ease;
+}
+
+.case-study-link:hover {
+    gap: 0.75rem;
+}
+
+@media (max-width: 768px) {
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Team Page Styles */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: var(--page-padding);
+}
+
+.team-card .service-icon {
+    height: 200px;
+    width: 200px;
+    margin: 0 auto;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.team-card .service-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.team-card .service-content {
+    text-align: center;
+}
+
+.team-card .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.team-card .social-links a {
+    color: var(--gray);
+    font-size: 1.25rem;
+    transition: color 0.2s ease;
+}
+
+.team-card .social-links a:hover {
+    color: var(--primary);
+}
+
+@media (max-width: 768px) {
+    .team-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+    }
+}
+
+/* Careers Section */
+.careers-section {
+    margin-top: 8rem;
+    padding: var(--page-padding);
+}
+
+.section-header {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 4rem;
+}
+
+.positions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: var(--content-width);
+    margin: 0 auto;
+}
+
+.position-card {
+    background: linear-gradient(145deg, var(--dark-gray), var(--accent));
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 2rem;
+}
+
+.position-card h3 {
+    color: var(--white);
+    margin-bottom: 1rem;
+}
+
+.position-card p {
+    color: var(--gray);
+    margin-bottom: 1.5rem;
+}
+
+.position-requirements {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+.position-requirements li {
+    color: var(--gray);
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.position-requirements li:last-child {
+    border-bottom: none;
+}
+
+@media (max-width: 768px) {
+    .team-grid,
+    .positions-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
