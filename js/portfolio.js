@@ -14,11 +14,11 @@ const projects = [
         link: "https://hardwoodherodsm.com"
     },
     {
-        title: "EXAMPLE SITE",
-        description: "EXAMPLE DESCRIPTION.",
-        image: "assets/portfolio/hardwoodhero.jpg",
+        title: "T&H WebWorks",
+        description: "The official site for T&H WebWorks, a modern tech business in Des Moines offering custom website development and mobile tech support. Built with a focus on branding, polish, and conversion.",
+        image: "assets/portfolio/T&HSite.jpg",
         tech: ["HTML", "CSS", "JavaScript"],
-        link: "https://hardwoodherodsm.com"
+        link: "index.html"
     }
 ];
 
