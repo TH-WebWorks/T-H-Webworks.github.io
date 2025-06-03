@@ -10,6 +10,53 @@
     <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&family=DM+Sans:wght@400;500;600&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="icon" type="image/png" href="favicon.png">
+    <style>
+        /* Make service titles larger */
+        .service-half h3 {
+            font-size: 2rem;
+        }
+        /* Style service feature bullets */
+        .service-features {
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+        }
+        .service-features li {
+            margin-bottom: 0.5rem;
+            font-size: 1.08rem;
+            position: relative;
+            padding-left: 1.2em;
+        }
+        .service-features li::before {
+            content: '\2022';
+            color: var(--secondary);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            position: absolute;
+            left: 0;
+            font-size: 1.3em;
+            line-height: 1;
+        }
+        /* Responsive layout for services split */
+        @media (max-width: 800px) {
+            .services-split {
+                flex-direction: column;
+                min-height: unset;
+            }
+            .service-half {
+                padding: 1.5rem 0.5rem;
+            }
+            .services-split > div[style*='background: var(--secondary)'] {
+                display: none !important;
+            }
+        }
+        @media (max-width: 500px) {
+            .service-half h3 {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <main class="services-page">
@@ -18,115 +65,41 @@
             <p>Professional web development solutions for Iowa businesses.</p>
         </div>
         
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon" style="background: var(--primary-light);">
-                    <i class="fas fa-code" style="color: var(--secondary);"></i>
+        <div class="services-split" style="display: flex; align-items: stretch; justify-content: center; margin: 3rem 0; min-height: 340px;">
+            <div class="service-half" style="flex: 1; padding: 2rem; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                <div class="service-icon" style="background: var(--primary-light); margin-bottom: 1rem;">
+                    <i class="fas fa-code" style="color: var(--secondary); font-size: 2.5rem;"></i>
                 </div>
-                <div class="service-content">
-                    <h3 style="color: var(--secondary);">Development</h3>
-                    <p>Custom websites built with clean, efficient code that performs.</p>
-                    <ul class="service-features">
-                        <li>Responsive Design</li>
-                        <li>Performance Optimization</li>
-                        <li>SEO Best Practices</li>
-                        <li>Custom Functionality</li>
-                    </ul>
-                </div>
+                <h3 style="color: var(--secondary); margin-bottom: 0.5rem;">Website Development</h3>
+                <p style="margin-bottom: 1rem;">Custom websites built for your business needs.</p>
+                <ul class="service-features" style="list-style: disc; padding-left: 1.2rem; text-align: left;">
+                    <li>Responsive Design</li>
+                    <li>Performance Optimization</li>
+                    <li>SEO Best Practices</li>
+                    <li>Custom Functionality</li>
+                </ul>
             </div>
-
-            <div class="service-card">
-                <div class="service-icon" style="background: var(--primary-light);">
-                    <i class="fas fa-paint-brush" style="color: var(--secondary);"></i>
+            <div style="width: 2px; background: var(--secondary); margin: 0 2rem; border-radius: 1px;"></div>
+            <div class="service-half" style="flex: 1; padding: 2rem; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                <div class="service-icon" style="background: var(--primary-light); margin-bottom: 1rem;">
+                    <i class="fas fa-mobile-alt" style="color: var(--secondary); font-size: 2.5rem;"></i>
                 </div>
-                <div class="service-content">
-                    <h3 style="color: var(--secondary);">Design</h3>
-                    <p>Minimal, purposeful user interfaces.</p>
-                    <ul class="service-features">
-                        <li>UI/UX Design</li>
-                        <li>Brand Identity</li>
-                        <li>Design Systems</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="service-card">
-                <div class="service-icon" style="background: var(--primary-light);">
-                    <i class="fas fa-server" style="color: var(--secondary);"></i>
-                </div>
-                <div class="service-content">
-                    <h3 style="color: var(--secondary);">Infrastructure</h3>
-                    <p>Reliable hosting and maintenance.</p>
-                    <ul class="service-features">
-                        <li>Cloud Hosting</li>
-                        <li>Performance Monitoring</li>
-                        <li>Security Updates</li>
-                    </ul>
-                </div>
+                <h3 style="color: var(--secondary); margin-bottom: 0.5rem;">Mobile Tech Support</h3>
+                <p style="margin-bottom: 1rem;">On-site and remote support for your mobile devices.</p>
+                <ul class="service-features" style="list-style: disc; padding-left: 1.2rem; text-align: left;">
+                    <li>Device Setup & Troubleshooting</li>
+                    <li>App Installation & Support</li>
+                    <li>Data Backup & Recovery</li>
+                    <li>Security & Privacy Assistance</li>
+                </ul>
             </div>
         </div>
 
-        <section class="pricing-section">
-            <div class="pricing-header">
-                <h2>Pricing</h2>
-                <p class="pricing-disclaimer">*prices are negotiable.</p>
-            </div>
-            <div class="pricing-grid">
-                <div class="pricing-card">
-                    <div class="pricing-header">
-                        <h3>Basic Website</h3>
-                        <p class="price" style="color: var(--secondary);">$1,500 + $100/mo</p>
-                    </div>
-                    <ul class="pricing-features">
-                        <li>3-5 Custom Pages</li>
-                        <li>Fully Custom-Coded</li>
-                        <li>Mobile Responsive</li>
-                        <li>Basic SEO Setup</li>
-                        <li>One Round of Revisions</li>
-                        <li>Monthly Maintenance & Updates</li>
-                    </ul>
-                    <a href="website-project.html" class="button">
-                        Get Started <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-
-                <div class="pricing-card featured">
-                    <div class="pricing-header">
-                        <h3>Business Website</h3>
-                        <p class="price" style="color: var(--secondary);">$2,000 + $100/mo</p>
-                    </div>
-                    <ul class="pricing-features">
-                        <li>5-7 Custom Pages</li>
-                        <li>Fully Custom-Coded</li>
-                        <li>Advanced SEO Setup</li>
-                        <li>Content Strategy</li>
-                        <li>One Round of Revisions</li>
-                        <li>Priority Support & Updates</li>
-                    </ul>
-                    <a href="website-project.html" class="button">
-                        Get Started <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-
-                <div class="pricing-card">
-                    <div class="pricing-header">
-                        <h3>E-commerce</h3>
-                        <p class="price" style="color: var(--secondary);">Custom Quote</p>
-                    </div>
-                    <ul class="pricing-features">
-                        <li>Full E-commerce Setup</li>
-                        <li>Payment Integration</li>
-                        <li>Inventory Management</li>
-                        <li>Order Processing</li>
-                        <li>Custom Features</li>
-                        <li>Priority Support & Updates</li>
-                    </ul>
-                    <a href="website-project.html" class="button">
-                        Get Started <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
-        </section>
+        <div class="cta-estimate" style="margin: 3rem auto 0 auto; text-align: center;">
+            <h2 style="color: var(--secondary); margin-bottom: 0.5rem;">Ready to get started?</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">Contact us today for a free, no-obligation estimate tailored to your needs.</p>
+            <a href="contact.html" style="display: inline-block; background: var(--secondary); color: #fff; padding: 0.9rem 2.2rem; border-radius: 2rem; font-size: 1.1rem; text-decoration: none; font-weight: 500; transition: background 0.2s;">Get Your Estimate</a>
+        </div>
     </main>
     <script src="js/components.js"></script>
     <script src="js/nav.js"></script>

@@ -11,7 +11,7 @@ const projects = [
         description: "A clean and functional website for a local hardwood flooring company.",
         image: "assets/portfolio/hardwoodhero.jpg",
         tech: ["HTML", "CSS", "JavaScript"],
-        link: "https://hardwoodherodsm.com"
+        //link: "https://hardwoodherodsm.com"
     },
     {
         title: "T&H WebWorks",
