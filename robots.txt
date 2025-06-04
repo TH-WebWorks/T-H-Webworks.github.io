@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://thwebworks.com/sitemap.xml 
