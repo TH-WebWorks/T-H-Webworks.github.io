@@ -3,157 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>T&H WebWorks - Des Moines Web Development</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>T&H WebWorks</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/navigation.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/utilities.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&family=DM+Sans:wght@400;500;600&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
-    <div class="background-blobs">
-        <span class="blob blob-blue"></span>
-        <span class="blob blob-orange"></span>
-    </div>
-    <!-- Site Header -->
-    <nav class="navbar">
-        <div class="logo">
-            <a href="index.html">
-                <img src="../T_HWWLogo.jpg" alt="T&H WebWorks Logo" />
-            </a>
-        </div>
-        <div class="nav-links" id="myLinks">
-            <a href="index.html">Home</a>
-            <a href="portfolio.html">Portfolio</a>
-            <a href="contact.html">Contact</a>
-            <a href="services.html">Services</a>
-            <a href="faq.html">FAQ</a>
-        </div>
-        <a href="javascript:void(0);" class="hamburger" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
-        </a>
-    </nav>
-    <div class="mobile-menu hidden">
-        <button id="close-menu">×</button>
-        <div class="mobile-nav-links">
-            <a href="index.html">Home</a>
-            <a href="portfolio.html">Portfolio</a>
-            <a href="contact.html">Contact</a>
-            <a href="services.html">Services</a>
-            <a href="faq.html">FAQ</a>
-        </div>
-    </div>
-    <script src="js/nav.js"></script>
-    <!-- End Site Header -->
+<body class="page-wrapper">
+    <div id="header-placeholder"></div>
 
-    <main class="hero">
-        <div class="hero-stack hero-stack-centered">
-            <span class="subtitle">&nbsp;</span>
-            <h1 class="brand-text">
-                <span style='color:#f45928;font-weight:100;'>T&amp;H</span><span style='color:#2176ff;font-weight:100;'>WebWorks</span>
-            </h1>
-            <div class="hero-tagline" style="color:#f45928;font-family:var(--font-ui);font-size:1.1rem;font-weight:600;letter-spacing:0.04em;margin-bottom:1.2rem;">FAST FIXES. CLEAN CODE. HAPPY CLIENTS.</div>
-            <p class="hero-desc">Building custom websites with clean, hand-written code. No templates, no bloat – just pure craftsmanship.</p>
-            <div class="cta">
-                <a href="portfolio.html" class="button">View Our Work</a>
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="code-elements">
+                <div class="code-line">&lt;div class="solution"&gt;Creating amazing websites&lt;/div&gt;</div>
+                <div class="code-line">const success = dedication + expertise;</div>
+                <div class="code-line">.transform { your-business: into-digital-success; }</div>
+                <div class="code-line">function innovate() { return "exceptional results"; }</div>
+                <div class="code-line">&lt;!-- Crafting the future of web --&gt;</div>
             </div>
-        </div>
+            <div class="container">
+                <div class="hero-content text-center">
+                    <h1 class="fade-in mb-4 font-bold">Welcome to T&H WebWorks</h1>
+                    <p class="hero-tagline text-gray-300 slide-up mb-8">Professional web development for Iowa businesses</p>
+                    <div class="flex gap-4 justify-center items-center">
+                        <a href="services.html" class="button button-primary transition hover:scale-105">
+                            <i class="fas fa-code mr-2"></i>
+                            <span class="font-semibold">View Services</span>
+                        </a>
+                        <a href="contact.html" class="button button-secondary transition hover:opacity-75">
+                            <i class="fas fa-arrow-right mr-2"></i>
+                            <span class="font-semibold">Get Started</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="section services-section">
+            <div class="container">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold mb-4">Our Services</h2>
+                    <p class="text-gray-300 text-lg max-w-2xl mx-auto">Comprehensive web solutions for your business, delivered with expertise and care</p>
+                </div>
+                <div class="services-grid">
+                    <div class="card service-card p-6 transition">
+                        <div class="card-icon mb-6">
+                            <i class="fas fa-code text-xl"></i>
+                        </div>
+                        <h3 class="card-title text-xl font-semibold mb-3">Web Development</h3>
+                        <p class="card-body mb-6">Custom websites that look great and perform even better, built with modern technologies and best practices.</p>
+                        <ul class="service-features">
+                            <li class="transition-fast">Clean, Hand-Written Code</li>
+                            <li class="transition-fast">Fast Loading Speed</li>
+                            <li class="transition-fast">Mobile-First Design</li>
+                            <li class="transition-fast">SEO Optimization</li>
+                        </ul>
+                    </div>
+                    <div class="card service-card p-6 transition">
+                        <div class="card-icon mb-6">
+                            <i class="fas fa-laptop-medical text-xl"></i>
+                        </div>
+                        <h3 class="card-title text-xl font-semibold mb-3">Tech Support</h3>
+                        <p class="card-body mb-6">Professional in-home tech help when you need it, with clear communication and effective solutions.</p>
+                        <ul class="service-features">
+                            <li class="transition-fast">Computer Repairs</li>
+                            <li class="transition-fast">WiFi Setup</li>
+                            <li class="transition-fast">Software Help</li>
+                            <li class="transition-fast">Data Recovery</li>
+                        </ul>
+                    </div>
+                    <div class="card service-card p-6 transition">
+                        <div class="card-icon mb-6">
+                            <i class="fas fa-tools text-xl"></i>
+                        </div>
+                        <h3 class="card-title text-xl font-semibold mb-3">Maintenance</h3>
+                        <p class="card-body mb-6">Keep your website running smoothly with our proactive maintenance and monitoring services.</p>
+                        <ul class="service-features">
+                            <li class="transition-fast">Regular Updates</li>
+                            <li class="transition-fast">Security Monitoring</li>
+                            <li class="transition-fast">Performance Checks</li>
+                            <li class="transition-fast">Content Updates</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="section-sm cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2 class="text-3xl font-bold mb-4">Ready to Start Your Project?</h2>
+                    <p class="text-gray-300 text-lg mb-8 max-w-xl mx-auto">Let's build something great together. Get in touch with us today and transform your digital presence.</p>
+                    <div class="flex gap-6 justify-center items-center">
+                        <a href="contact.html" class="button button-primary transition hover:scale-105">
+                            <i class="fas fa-rocket mr-2"></i>
+                            <span class="font-semibold">Get Started</span>
+                        </a>
+                        <a href="portfolio.html" class="button button-secondary transition hover:opacity-75">
+                            <i class="fas fa-images mr-2"></i>
+                            <span class="font-semibold">View Our Work</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <section class="services-section">
-        <h2 class="services-title">What We Offer</h2>
-        <div class="services-grid-home">
-            <div class="service-card-home">
-                <h3>Website Development</h3>
-                <p>Custom websites for small businesses and local brands. Includes a detailed intake form for pages, business type, logo, content, and more.</p>
-                <a href="website-project.html" class="button">Start Website Project</a>
-            </div>
-            <div class="service-card-home">
-                <h3>Mobile Tech Support</h3>
-                <p>In-home tech help for non-tech-savvy users, seniors, and remote workers. Book a visit for printer help, Wi-Fi fixes, PC tune-ups, and more.</p>
-                <a href="tech-support.html" class="button">Book Tech Support</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="how-it-works-section">
-        <h2 class="services-title">How It Works</h2>
-        <div class="how-steps">
-            <div class="how-step">
-                <div class="how-icon"><i class="fas fa-comments"></i></div>
-                <h3>Discovery</h3>
-                <p>We learn about your business, goals, and needs to craft a custom solution.</p>
-            </div>
-            <div class="how-step">
-                <div class="how-icon"><i class="fas fa-pencil-ruler"></i></div>
-                <h3>Design</h3>
-                <p>We create a clean, modern design that fits your brand and vision.</p>
-            </div>
-            <div class="how-step">
-                <div class="how-icon"><i class="fas fa-code"></i></div>
-                <h3>Build</h3>
-                <p>We hand-code your site for speed, security, and easy updates.</p>
-            </div>
-            <div class="how-step">
-                <div class="how-icon"><i class="fas fa-rocket"></i></div>
-                <h3>Launch</h3>
-                <p>Your new site goes live—ready to impress and convert visitors!</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="portfolio-preview-section">
-        <h2 class="services-title">Featured Projects</h2>
-        <div class="portfolio-preview-grid">
-            <div class="portfolio-card">
-                <div class="project-image">
-                    <img src="assets/portfolio/t7mods.jpg" alt="T7 Mods Website Screenshot">
-                </div>
-                <div class="portfolio-content">
-                    <h3>T7 Mods</h3>
-                    <p>Custom site for a gaming modding community, featuring project showcases and resources.</p>
-                </div>
-            </div>
-            <div class="portfolio-card">
-                <div class="project-image">
-                    <img src="assets/portfolio/hardwoodhero.jpg" alt="T7 Mods Website Screenshot">
-                </div> 
-                <div class="portfolio-content">
-                    <h3>Hardwood Hero</h3>
-                    <p>A clean and functional website for a local hardwood flooring company..</p>
-                </div>
-            </div>
-            <div class="portfolio-card">
-                <div class="project-image">
-                    <img src="assets/portfolio/T&HSite.jpg" alt="T&H WebWorks Website Screenshot">
-                </div>
-                <div class="portfolio-content">
-                    <h3>T&H WebWorks</h3>
-                    <p>The official site for T&H WebWorks, built for modern web and tech support services in Des Moines.</p>
-                </div>
-            </div>
-        </div>
-        <a href="portfolio.html" class="button outline portfolio-more">See More Projects</a>
-    </section>
-
-    <section class="faq-preview-section">
-        <h2 class="services-title">Common Questions</h2>
-        <div class="faq-preview-grid">
-            <div class="faq-preview-item">
-                <h4>How long does a website project take?</h4>
-                <p>Most sites are completed in 2–4 weeks, depending on complexity and content.</p>
-            </div>
-            <div class="faq-preview-item">
-                <h4>Do you offer in-person tech support?</h4>
-                <p>Yes! We offer in-home tech help for Des Moines and surrounding areas.</p>
-            </div>
-        </div>
-        <a href="faq.html" class="button outline faq-more">See All FAQs</a>
-    </section>
+    <div id="footer-placeholder"></div>
 
     <script src="js/components.js"></script>
-    <script src="js/particles.js"></script>
-    
+    <script src="js/nav.js"></script>
 </body>
 </html> 

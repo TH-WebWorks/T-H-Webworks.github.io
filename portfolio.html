@@ -4,75 +4,117 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - T&H WebWorks</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/navigation.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/utilities.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&family=DM+Sans:wght@400;500;600&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="page-wrapper">
     <div class="background-blobs">
         <span class="blob blob-blue"></span>
         <span class="blob blob-orange"></span>
     </div>
-    <!-- Site Header -->
-    <nav class="navbar">
-        <div class="logo">
-            <a href="index.html">
-                <img src="../T_HWWLogo.jpg" alt="T&H WebWorks Logo" />
-            </a>
-        </div>
-        <div class="nav-links" id="myLinks">
-            <a href="index.html">Home</a>
-            <a href="portfolio.html" class="active">Portfolio</a>
-            <a href="contact.html">Contact</a>
-            <a href="services.html">Services</a>
-            <a href="faq.html">FAQ</a>
-        </div>
-        <a href="javascript:void(0);" class="hamburger" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
-        </a>
-    </nav>
-    <div class="mobile-menu hidden">
-        <button id="close-menu">×</button>
-        <div class="mobile-nav-links">
-            <a href="index.html">Home</a>
-            <a href="portfolio.html" class="active">Portfolio</a>
-            <a href="contact.html">Contact</a>
-            <a href="services.html">Services</a>
-            <a href="faq.html">FAQ</a>
-        </div>
-    </div>
-    <script src="js/nav.js"></script>
-    <!-- End Site Header -->
-    <main class="portfolio-page">
-        <div class="page-header">
-            <h1 class="services-title">Our Work</h1>
-            <p>Explore our latest projects and see how we help businesses succeed online.</p>
-        </div>
-        <div class="project-grid">
-            <!-- More project cards will be loaded dynamically -->
-        </div>
+
+    <div id="header-placeholder"></div>
+
+    <main>
+        <section class="section-sm">
+            <div class="container">
+                <div class="page-header">
+                    <h1 class="fade-in">Our Work</h1>
+                    <p class="slide-up">Custom websites we've built for Iowa businesses.</p>
+                </div>
+
+                <div class="portfolio-grid">
+                    <div class="card portfolio-card hover:scale-105 transition">
+                        <div class="project-image">
+                            <img src="assets/portfolio/t7mods.jpg" alt="T7 Mods Website Screenshot" class="object-cover">
+                            <div class="project-overlay"></div>
+                        </div>
+                        <div class="portfolio-content p-6">
+                            <h3 class="text-xl font-semibold mb-3">T7 Mods</h3>
+                            <p class="text-gray-300 mb-4">A clean, modern website for a gaming modding community. Built with custom HTML/CSS and JavaScript.</p>
+                            <div class="tech-stack mb-6">
+                                <span class="tech-tag">HTML</span>
+                                <span class="tech-tag">CSS</span>
+                                <span class="tech-tag">JavaScript</span>
+                            </div>
+                            <a href="https://www.t7mods.com/" target="_blank" class="button button-primary w-full text-center">
+                                <i class="fas fa-external-link-alt mr-2"></i>
+                                Visit Site
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="card portfolio-card hover:scale-105 transition">
+                        <div class="project-image">
+                            <img src="assets/portfolio/hardwoodhero.jpg" alt="Hardwood Hero Website Screenshot" class="object-cover">
+                            <div class="project-overlay"></div>
+                        </div>
+                        <div class="portfolio-content p-6">
+                            <h3 class="text-xl font-semibold mb-3">Hardwood Hero</h3>
+                            <p class="text-gray-300 mb-4">Professional website for a Des Moines hardwood flooring company. Features contact forms and service showcases.</p>
+                            <div class="tech-stack mb-6">
+                                <span class="tech-tag">HTML</span>
+                                <span class="tech-tag">CSS</span>
+                                <span class="tech-tag">Contact Forms</span>
+                            </div>
+                            <a href="#" class="button button-primary w-full text-center">
+                                <i class="fas fa-eye mr-2"></i>
+                                View Project
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="card portfolio-card hover:scale-105 transition">
+                        <div class="project-image">
+                            <img src="assets/portfolio/T&HSite.jpg" alt="T&H WebWorks Website Screenshot" class="object-cover">
+                            <div class="project-overlay"></div>
+                        </div>
+                        <div class="portfolio-content p-6">
+                            <h3 class="text-xl font-semibold mb-3">T&H WebWorks</h3>
+                            <p class="text-gray-300 mb-4">Our own business website showcasing our web development and tech support services.</p>
+                            <div class="tech-stack mb-6">
+                                <span class="tech-tag">HTML</span>
+                                <span class="tech-tag">CSS</span>
+                                <span class="tech-tag">JavaScript</span>
+                            </div>
+                            <a href="index.html" class="button button-primary w-full text-center">
+                                <i class="fas fa-home mr-2"></i>
+                                You're Here!
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-sm bg-gradient-to-b from-gray-900 to-black relative overflow-hidden">
+            <div class="container relative z-10">
+                <div class="page-header">
+                    <h2 class="fade-in">Ready to Start Your Project?</h2>
+                    <p class="slide-up">Let's build something great together.</p>
+                </div>
+                <div class="flex justify-center gap-4 mt-8">
+                    <a href="services.html" class="button button-primary">
+                        <i class="fas fa-list-ul mr-2"></i>
+                        View Services
+                    </a>
+                    <a href="contact.html" class="button button-secondary">
+                        <i class="fas fa-paper-plane mr-2"></i>
+                        Get Started
+                    </a>
+                </div>
+            </div>
+        </section>
     </main>
-    <footer>
-      <div class="footer-content">
-          <div class="footer-left">
-              <div class="footer-links">
-                  <a href="privacy.html">Privacy</a>
-                  <a href="terms.html">Terms</a>
-              </div>
-              <div class="copyright">&copy; 2025 T&H WebWorks</div>
-          </div>
-          <div class="social-links">
-              <a href="https://github.com/T-H-Webworks" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-              <a href="https://www.facebook.com/people/TH-Webworks/61572906862964/#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-              <a href="https://www.instagram.com/th.webworks?igsh=MTA1aGVuNHAxNWp5dw==" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          </div>
-      </div>
-    </footer>
+
+    <div id="footer-placeholder"></div>
+
     <script src="js/components.js"></script>
-    <script src="js/portfolio.js"></script>
+    <script src="js/nav.js"></script>
 </body>
 </html> 

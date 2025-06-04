@@ -4,70 +4,61 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Start Website Project - T&H WebWorks</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/navigation.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/utilities.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="favicon.png">
 </head>
-<body>
+<body class="page-wrapper">
   <div class="background-blobs">
     <span class="blob blob-blue"></span>
     <span class="blob blob-orange"></span>
   </div>
-  <!-- Site Header -->
-  <nav class="navbar">
-    <div class="logo">
-      <a href="index.html">
-        <img src="../T_HWWLogo.jpg" alt="T&H WebWorks Logo" />
-      </a>
-    </div>
-    <div class="nav-links" id="myLinks">
-        <a href="index.html">Home</a>
-        <a href="portfolio.html">Portfolio</a>
-        <a href="contact.html">Contact</a>
-        <a href="services.html">Services</a>
-        <a href="faq.html">FAQ</a>
-    </div>
-    <a href="javascript:void(0);" class="hamburger" onclick="toggleMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
-    </a>
-  </nav>
-  <div class="mobile-menu hidden">
-    <button id="close-menu">×</button>
-    <div class="mobile-nav-links">
-        <a href="index.html">Home</a>
-        <a href="portfolio.html">Portfolio</a>
-        <a href="contact.html">Contact</a>
-        <a href="services.html">Services</a>
-        <a href="faq.html">FAQ</a>
-    </div>
-  </div>
-  <script src="js/nav.js"></script>
-  <!-- End Site Header -->
+  <div id="header-placeholder"></div>
   <main class="contact-page">
     <div class="page-header">
       <h1 class="services-title">Start Your Website Project</h1>
-      <p>Fill out the form below to get started on your custom website. We'll review your info and get in touch soon!</p>
+      <p>Let's build your professional website together.</p>
     </div>
-    <div class="form-embed">
-      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSd0tf4a1aPg6YjbQP3-CtiIjGpnJAXYkl6QW_xLmE0LNVCEwA/viewform?embedded=true" width="100%" height="1000" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    
+    <div class="project-intro">
+      <div class="info-grid">
+        <div class="info-card">
+          <h3>What to Expect</h3>
+          <ul>
+            <li>2-4 week development time</li>
+            <li>Custom design to match your brand</li>
+            <li>Mobile-friendly and fast-loading</li>
+            <li>SEO optimization included</li>
+          </ul>
+        </div>
+        <div class="info-card">
+          <h3>Have Ready</h3>
+          <ul>
+            <li>Your business logo (if you have one)</li>
+            <li>Basic content for each page</li>
+            <li>Any specific design preferences</li>
+            <li>Examples of sites you like</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-section">
+      <h2>Project Details</h2>
+      <p>Fill out the form below to help us understand your needs. We'll review and respond within 24 hours.</p>
+      <div class="form-embed">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSd0tf4a1aPg6YjbQP3-CtiIjGpnJAXYkl6QW_xLmE0LNVCEwA/viewform?embedded=true" width="100%" height="1000" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+      </div>
     </div>
   </main>
-  <footer>
-    <div class="footer-content">
-        <div class="footer-left">
-            <div class="footer-links">
-                <a href="privacy.html">Privacy</a>
-                <a href="terms.html">Terms</a>
-            </div>
-            <div class="copyright">&copy; 2025 T&H WebWorks</div>
-        </div>
-        <div class="social-links">
-            <a href="https://github.com/T-H-Webworks" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-            <a href="https://www.facebook.com/people/TH-Webworks/61572906862964/#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-            <a href="https://www.instagram.com/th.webworks?igsh=MTA1aGVuNHAxNWp5dw==" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        </div>
-    </div>
-  </footer>
+  <div id="footer-placeholder"></div>
+
+  <script src="js/components.js"></script>
+  <script src="js/nav.js"></script>
 </body>
 </html> 

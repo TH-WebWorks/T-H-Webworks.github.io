@@ -4,131 +4,151 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - T&H WebWorks</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/navigation.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/utilities.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&family=DM+Sans:wght@400;500;600&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="favicon.png">
-    <style>
-        /* Thank you popup centering and text color */
-        #thankyou-popup {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background: rgba(0,0,0,0.4);
-            z-index: 1000;
-            align-items: center;
-            justify-content: center;
-        }
-        #thankyou-popup.active {
-            display: flex;
-        }
-        #thankyou-popup p {
-            color: #333;
-            font-size: 1.1rem;
-        }
-        /* Orange text on focus for inputs and textarea */
-        .contact-form input:focus, .contact-form textarea:focus {
-            color: orange;
-            outline: none;
-        }
-        .contact-form input, .contact-form textarea {
-            transition: color 0.2s;
-        }
-        /* Orange label on focus for floating labels */
-        .form-group input:focus + label,
-        .form-group textarea:focus + label {
-            color: orange !important;
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
-    <div id="thankyou-popup" style="position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.4); z-index:1000; align-items:center; justify-content:center;">
-      <div style="background:#fff; padding:2rem 2.5rem; border-radius:12px; box-shadow:0 2px 16px rgba(0,0,0,0.15); text-align:center;">
-        <h2 style="color:var(--secondary); margin-bottom:0.5rem;">Thank you!</h2>
-        <p>Your message has been sent. We'll get back to you soon.</p>
-        <button onclick="closeThankYouPopup()" style="margin-top:1.2rem; padding:0.6rem 1.5rem; border:none; background:var(--secondary); color:#fff; border-radius:2rem; font-size:1rem; cursor:pointer;">Close</button>
-      </div>
+<body class="page-wrapper">
+    <div class="background-blobs">
+        <span class="blob blob-blue"></span>
+        <span class="blob blob-orange"></span>
     </div>
-    <main class="contact-page">
-        <div class="page-header">
-            <h1>Get in Touch</h1>
-            <p>Ready for a website that truly represents your business?</p>
-        </div>
-        
-        <div class="contact-container">
-            <div class="contact-info">
-                <div class="contact-intro">
-                    <h2>Let's Build Something Great</h2>
-                    <p>No templates. No bloat. Just clean, efficient code crafted specifically for your business.</p>
+
+    <div id="header-placeholder"></div>
+
+    <main>
+        <section class="section-sm">
+            <div class="container">
+                <div class="page-header">
+                    <h1 class="fade-in">Get In Touch</h1>
+                    <p class="slide-up">Ready to start your project? Let's discuss your needs.</p>
                 </div>
-                
-                <div class="contact-methods">
-                    <div class="contact-method">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h3>Email Us</h3>
-                            <a href="mailto:hello@thwebworks.com">hello@thwebworks.com</a>
+
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <div class="card contact-method hover:scale-105 transition">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-3">Email</h3>
+                            <p class="text-gray-300 mb-4">Send us a message and we'll respond within 24 hours.</p>
+                            <a href="mailto:hello@thwebworks.com" class="contact-link">
+                                <i class="fas fa-arrow-right mr-2"></i>
+                                hello@thwebworks.com
+                            </a>
+                        </div>
+
+                        <div class="card contact-method hover:scale-105 transition">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-3">Phone</h3>
+                            <p class="text-gray-300 mb-4">Call us for immediate assistance or to schedule a consultation.</p>
+                            <a href="tel:+15151234567" class="contact-link">
+                                <i class="fas fa-arrow-right mr-2"></i>
+                                (515) 123-4567
+                            </a>
+                        </div>
+
+                        <div class="card contact-method hover:scale-105 transition">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-3">Service Areas</h3>
+                            <p class="text-gray-300">We serve Des Moines and surrounding areas for tech support, and work with clients nationwide for web development.</p>
                         </div>
                     </div>
-                    <div class="contact-method">
-                        <i class="fas fa-location-dot"></i>
-                        <div>
-                            <h3>Located In</h3>
-                            <span>Des Moines Metro, Iowa</span>
-                        </div>
+
+                    <div class="card contact-form-container p-8">
+                        <h2 class="text-2xl font-bold mb-6">Send us a message</h2>
+                        <form action="#" method="POST" class="space-y-6">
+                            <div class="form-group">
+                                <label for="name" class="form-label">Name</label>
+                                <div class="input-group">
+                                    <i class="fas fa-user"></i>
+                                    <input type="text" id="name" name="name" class="form-input" required placeholder="Your name">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email</label>
+                                <div class="input-group">
+                                    <i class="fas fa-envelope"></i>
+                                    <input type="email" id="email" name="email" class="form-input" required placeholder="your@email.com">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="service" class="form-label">Service Needed</label>
+                                <div class="input-group">
+                                    <i class="fas fa-cog"></i>
+                                    <select id="service" name="service" class="form-input">
+                                        <option value="">Select a service</option>
+                                        <option value="website">Website Development</option>
+                                        <option value="tech-support">Tech Support</option>
+                                        <option value="maintenance">Website Maintenance</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message" class="form-label">Message</label>
+                                <div class="input-group">
+                                    <i class="fas fa-comment"></i>
+                                    <textarea id="message" name="message" rows="5" class="form-input" required placeholder="Tell us about your project..."></textarea>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="button button-primary w-full">
+                                <i class="fas fa-paper-plane mr-2"></i>
+                                Send Message
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
-            
-            <form class="contact-form" action="https://formspree.io/f/xeokqyje" method="POST">
-                <div class="form-group">
-                    <input type="text" id="name" name="name" required>
-                    <label for="name">Name</label>
+        </section>
+
+        <section class="section-sm bg-gradient-to-b from-gray-900 to-black">
+            <div class="container">
+                <h2 class="text-2xl font-bold text-center mb-8">Quick Start</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="card hover:scale-105 transition text-center p-8">
+                        <div class="card-icon mb-6">
+                            <i class="fas fa-laptop-code text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Website Project</h3>
+                        <p class="text-gray-300 mb-6">Ready to start your new website? Let's create something amazing together.</p>
+                        <a href="website-project.html" class="button button-primary w-full">
+                            <i class="fas fa-arrow-right mr-2"></i>
+                            Start Project
+                        </a>
+                    </div>
+
+                    <div class="card hover:scale-105 transition text-center p-8">
+                        <div class="card-icon mb-6">
+                            <i class="fas fa-tools text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Tech Support</h3>
+                        <p class="text-gray-300 mb-6">Need help with your computer or tech? We're here to assist you.</p>
+                        <a href="tech-support.html" class="button button-primary w-full">
+                            <i class="fas fa-calendar-alt mr-2"></i>
+                            Book Support
+                        </a>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <input type="email" id="email" name="email" required>
-                    <label for="email">Email</label>
-                </div>
-                <div class="form-group">
-                    <textarea id="message" name="message" required></textarea>
-                    <label for="message">Message</label>
-                </div>
-                <button type="submit" class="button">Send Message</button>
-            </form>
-        </div>
+            </div>
+        </section>
     </main>
+
+    <div id="footer-placeholder"></div>
+
     <script src="js/components.js"></script>
     <script src="js/nav.js"></script>
-    <script>
-    document.querySelector('.contact-form').addEventListener('submit', async function(e) {
-      e.preventDefault();
-      const form = e.target;
-      const data = new FormData(form);
-
-      // Send the form data to Formspree
-      const response = await fetch(form.action, {
-        method: 'POST',
-        body: data,
-        headers: { 'Accept': 'application/json' }
-      });
-
-      if (response.ok) {
-        form.reset();
-        // Use flex to show popup
-        var popup = document.getElementById('thankyou-popup');
-        popup.classList.add('active');
-      } else {
-        alert('There was a problem sending your message. Please try again.');
-      }
-    });
-    // Fix close button to use flex hide
-    function closeThankYouPopup() {
-      document.getElementById('thankyou-popup').classList.remove('active');
-    }
-    </script>
 </body>
 </html> 

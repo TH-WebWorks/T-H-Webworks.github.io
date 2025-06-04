@@ -4,103 +4,165 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Services - T&H WebWorks</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/navigation.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/utilities.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&family=DM+Sans:wght@400;500;600&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="icon" type="image/png" href="favicon.png">
-    <style>
-        /* Make service titles larger */
-        .service-half h3 {
-            font-size: 2rem;
-        }
-        /* Style service feature bullets */
-        .service-features {
-            margin-top: 0.5rem;
-            margin-bottom: 0.5rem;
-            padding-left: 1.5rem;
-        }
-        .service-features li {
-            margin-bottom: 0.5rem;
-            font-size: 1.08rem;
-            position: relative;
-            padding-left: 1.2em;
-        }
-        .service-features li::before {
-            content: '\2022';
-            color: var(--secondary);
-            font-weight: bold;
-            display: inline-block;
-            width: 1em;
-            position: absolute;
-            left: 0;
-            font-size: 1.3em;
-            line-height: 1;
-        }
-        /* Responsive layout for services split */
-        @media (max-width: 800px) {
-            .services-split {
-                flex-direction: column;
-                min-height: unset;
-            }
-            .service-half {
-                padding: 1.5rem 0.5rem;
-            }
-            .services-split > div[style*='background: var(--secondary)'] {
-                display: none !important;
-            }
-        }
-        @media (max-width: 500px) {
-            .service-half h3 {
-                font-size: 1.3rem;
-            }
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
-    <main class="services-page">
-        <div class="page-header">
-            <h1>Our Services</h1>
-            <p>Professional web development and mobile tech support solutions for Iowa businesses.</p>
-        </div>
-        
-        <div class="services-split" style="display: flex; align-items: stretch; justify-content: center; margin: 3rem 0; min-height: 340px;">
-            <div class="service-half" style="flex: 1; padding: 2rem; display: flex; flex-direction: column; align-items: center; justify-content: center;">
-                <div class="service-icon" style="background: var(--primary-light); margin-bottom: 1rem;">
-                    <i class="fas fa-code" style="color: var(--secondary); font-size: 2.5rem;"></i>
-                </div>
-                <h3 style="color: var(--secondary); margin-bottom: 0.5rem;">Website Development</h3>
-                <p style="margin-bottom: 1rem;">Custom websites built for your business needs.</p>
-                <ul class="service-features" style="list-style: disc; padding-left: 1.2rem; text-align: left;">
-                    <li>Responsive Design</li>
-                    <li>Performance Optimization</li>
-                    <li>SEO Best Practices</li>
-                    <li>Custom Functionality</li>
-                </ul>
-            </div>
-            <div style="width: 2px; background: var(--secondary); margin: 0 2rem; border-radius: 1px;"></div>
-            <div class="service-half" style="flex: 1; padding: 2rem; display: flex; flex-direction: column; align-items: center; justify-content: center;">
-                <div class="service-icon" style="background: var(--primary-light); margin-bottom: 1rem;">
-                    <i class="fas fa-mobile-alt" style="color: var(--secondary); font-size: 2.5rem;"></i>
-                </div>
-                <h3 style="color: var(--secondary); margin-bottom: 0.5rem;">Mobile Tech Support</h3>
-                <p style="margin-bottom: 1rem;">On-site and remote support for your mobile devices.</p>
-                <ul class="service-features" style="list-style: disc; padding-left: 1.2rem; text-align: left;">
-                    <li>Device Setup & Troubleshooting</li>
-                    <li>App Installation & Support</li>
-                    <li>Data Backup & Recovery</li>
-                    <li>Security & Privacy Assistance</li>
-                </ul>
-            </div>
-        </div>
+<body class="page-wrapper">
+    <div class="background-blobs">
+        <span class="blob blob-blue"></span>
+        <span class="blob blob-orange"></span>
+    </div>
+    
+    <div id="header-placeholder"></div>
 
-        <div class="cta-estimate" style="margin: 3rem auto 0 auto; text-align: center;">
-            <h2 style="color: var(--secondary); margin-bottom: 0.5rem;">Ready to get started?</h2>
-            <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">Contact us today for a free, no-obligation estimate tailored to your needs.</p>
-            <a href="contact.html" style="display: inline-block; background: var(--secondary); color: #fff; padding: 0.9rem 2.2rem; border-radius: 2rem; font-size: 1.1rem; text-decoration: none; font-weight: 500; transition: background 0.2s;">Get Your Estimate</a>
-        </div>
+    <main>
+        <!-- Page Header -->
+        <section class="section-sm">
+            <div class="container">
+                <div class="page-header">
+                    <h1 class="fade-in">Our Services</h1>
+                    <p class="slide-up">Professional web development and tech support for Iowa businesses and individuals.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Grid -->
+        <section class="section" id="web-development">
+            <div class="container">
+                <div class="services-grid">
+                    <div class="card service-card hover:scale-105 transition">
+                        <div class="card-icon mb-6">
+                            <i class="fas fa-code text-xl"></i>
+                        </div>
+                        <h3 class="card-title text-xl font-semibold mb-3">Web Development</h3>
+                        <p class="card-body mb-6">Custom websites that look great and perform even better, built with modern technologies and best practices.</p>
+                        <ul class="service-features">
+                            <li class="transition-fast">Clean, Hand-Written Code</li>
+                            <li class="transition-fast">Fast Loading Speed</li>
+                            <li class="transition-fast">Mobile-First Design</li>
+                            <li class="transition-fast">SEO Optimization</li>
+                        </ul>
+                    </div>
+
+                    <div class="card service-card hover:scale-105 transition" id="tech-support">
+                        <div class="card-icon mb-6">
+                            <i class="fas fa-laptop-medical text-xl"></i>
+                        </div>
+                        <h3 class="card-title text-xl font-semibold mb-3">Tech Support</h3>
+                        <p class="card-body mb-6">Professional in-home tech help when you need it, with clear communication and effective solutions.</p>
+                        <ul class="service-features">
+                            <li class="transition-fast">Computer Repairs</li>
+                            <li class="transition-fast">WiFi Setup</li>
+                            <li class="transition-fast">Software Help</li>
+                            <li class="transition-fast">Data Recovery</li>
+                        </ul>
+                    </div>
+
+                    <div class="card service-card hover:scale-105 transition" id="maintenance">
+                        <div class="card-icon mb-6">
+                            <i class="fas fa-tools text-xl"></i>
+                        </div>
+                        <h3 class="card-title text-xl font-semibold mb-3">Maintenance</h3>
+                        <p class="card-body mb-6">Keep your website running smoothly with our proactive maintenance and monitoring services.</p>
+                        <ul class="service-features">
+                            <li class="transition-fast">Regular Updates</li>
+                            <li class="transition-fast">Security Monitoring</li>
+                            <li class="transition-fast">Performance Checks</li>
+                            <li class="transition-fast">Content Updates</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section class="section bg-gradient-to-b from-gray-900 to-black relative overflow-hidden">
+            <div class="container relative z-10">
+                <div class="page-header">
+                    <h2 class="fade-in">Website Packages</h2>
+                    <p class="slide-up">All packages include custom design, responsive development, and ongoing support.</p>
+                </div>
+                
+                <div class="pricing-grid">
+                    <div class="card pricing-card hover:scale-105 transition">
+                        <h3 class="text-xl font-semibold mb-2">Starter</h3>
+                        <p class="price text-3xl font-bold text-blue-400 mb-6">$1,500 + $100/mo</p>
+                        <ul class="pricing-features mb-8">
+                            <li class="transition-fast">3-5 Custom Pages</li>
+                            <li class="transition-fast">Mobile-Friendly Design</li>
+                            <li class="transition-fast">Contact Form</li>
+                            <li class="transition-fast">Basic SEO Setup</li>
+                            <li class="transition-fast">Monthly Updates</li>
+                            <li class="transition-fast">Email Support</li>
+                        </ul>
+                        <a href="website-project.html" class="button button-primary w-full text-center">Start Project</a>
+                    </div>
+
+                    <div class="card pricing-card featured hover:scale-105 transition">
+                        <div class="featured-badge">Most Popular</div>
+                        <h3 class="text-xl font-semibold mb-2">Professional</h3>
+                        <p class="price text-3xl font-bold text-blue-400 mb-6">$2,000 + $100/mo</p>
+                        <ul class="pricing-features mb-8">
+                            <li class="transition-fast">5-7 Custom Pages</li>
+                            <li class="transition-fast">Advanced Design Features</li>
+                            <li class="transition-fast">Blog/News Section</li>
+                            <li class="transition-fast">Advanced SEO Setup</li>
+                            <li class="transition-fast">Priority Updates</li>
+                            <li class="transition-fast">Phone & Email Support</li>
+                        </ul>
+                        <a href="website-project.html" class="button button-primary w-full text-center">Start Project</a>
+                    </div>
+
+                    <div class="card pricing-card hover:scale-105 transition">
+                        <h3 class="text-xl font-semibold mb-2">E-commerce</h3>
+                        <p class="price text-3xl font-bold text-blue-400 mb-6">Custom Quote</p>
+                        <ul class="pricing-features mb-8">
+                            <li class="transition-fast">Product Management</li>
+                            <li class="transition-fast">Secure Checkout</li>
+                            <li class="transition-fast">Inventory System</li>
+                            <li class="transition-fast">Order Processing</li>
+                            <li class="transition-fast">Payment Integration</li>
+                            <li class="transition-fast">Priority Support</li>
+                        </ul>
+                        <a href="website-project.html" class="button button-primary w-full text-center">Get Quote</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tech Support Section -->
+        <section class="section-sm bg-black relative overflow-hidden">
+            <div class="container relative z-10">
+                <div class="page-header">
+                    <h2 class="fade-in">Tech Support</h2>
+                    <p class="slide-up">Professional in-home tech support at competitive rates.</p>
+                </div>
+                
+                <div class="max-w-xl mx-auto">
+                    <div class="card hover:scale-105 transition p-8 text-center">
+                        <h3 class="text-3xl font-bold text-blue-400 mb-6">$75/hour</h3>
+                        <ul class="space-y-3 mb-8">
+                            <li class="text-gray-300">1 hour minimum</li>
+                            <li class="text-gray-300">No fix, no fee guarantee</li>
+                            <li class="text-gray-300">Senior discount available</li>
+                        </ul>
+                        <a href="tech-support.html" class="button button-primary">
+                            <i class="fas fa-calendar-alt mr-2"></i>
+                            Book Support
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
+
+    <div id="footer-placeholder"></div>
+
     <script src="js/components.js"></script>
     <script src="js/nav.js"></script>
 </body>

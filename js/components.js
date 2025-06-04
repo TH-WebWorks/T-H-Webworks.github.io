@@ -1,20 +1,28 @@
-// Load header and footer
-document.addEventListener('DOMContentLoaded', function() {
-    // Load header
-    fetch('components/header.html')
-        .then(response => response.text())
-        .then(data => {
-            document.body.insertAdjacentHTML('afterbegin', data);
-            setActiveNavLink();
-            initMobileMenu();
-        });
+// Function to load HTML components
+async function loadComponent(url, targetId) {
+    try {
+        const response = await fetch(url);
+        const html = await response.text();
+        document.getElementById(targetId).innerHTML = html;
+        return true;
+    } catch (error) {
+        console.error('Error loading component:', error);
+        return false;
+    }
+}
 
-    // Load footer
-    fetch('components/footer.html')
-        .then(response => response.text())
-        .then(data => {
-            document.body.insertAdjacentHTML('beforeend', data);
-        });
+// Load components when DOM is ready
+document.addEventListener('DOMContentLoaded', async function() {
+    // Load header component
+    await loadComponent('components/header.html', 'header-placeholder');
+    
+    // Load footer component
+    await loadComponent('components/footer.html', 'footer-placeholder');
+    
+    // Initialize navigation after components are loaded
+    if (typeof initializeNavigation === 'function') {
+        initializeNavigation();
+    }
 });
 
 function initMobileMenu() {

@@ -4,70 +4,63 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Book Tech Support - T&H WebWorks</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/navigation.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/utilities.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="favicon.png">
 </head>
-<body>
+<body class="page-wrapper">
   <div class="background-blobs">
     <span class="blob blob-blue"></span>
     <span class="blob blob-orange"></span>
   </div>
-  <!-- Site Header -->
-  <nav class="navbar">
-    <div class="logo">
-      <a href="index.html">
-        <img src="../T_HWWLogo.jpg" alt="T&H WebWorks Logo" />
-      </a>
-    </div>
-    <div class="nav-links" id="myLinks">
-        <a href="index.html">Home</a>
-        <a href="portfolio.html">Portfolio</a>
-        <a href="contact.html">Contact</a>
-        <a href="services.html">Services</a>
-        <a href="faq.html">FAQ</a>
-    </div>
-    <a href="javascript:void(0);" class="hamburger" onclick="toggleMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
-    </a>
-  </nav>
-  <div class="mobile-menu hidden">
-    <button id="close-menu">×</button>
-    <div class="mobile-nav-links">
-        <a href="index.html">Home</a>
-        <a href="portfolio.html">Portfolio</a>
-        <a href="contact.html">Contact</a>
-        <a href="services.html">Services</a>
-        <a href="faq.html">FAQ</a>
-    </div>
-  </div>
-  <script src="js/nav.js"></script>
-  <!-- End Site Header -->
+  <div id="header-placeholder"></div>
   <main class="contact-page">
     <div class="page-header">
-      <h1 class="services-title">Book Tech Support</h1>
-      <p>Need help with your tech? Fill out the form below to book a support session. We'll confirm your appointment ASAP!</p>
+      <h1 class="services-title">Tech Support</h1>
+      <p>Professional in-home tech support in Des Moines and surrounding areas.</p>
     </div>
-    <div class="form-embed">
-      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScAsBjSWuPL2Ong6X-xTPGt2TJs7CmnARo_5lkESshCJEH5gQ/viewform?embedded=true" width="100%" height="1000" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+
+    <div class="support-intro">
+      <div class="info-grid">
+        <div class="info-card">
+          <h3>Services</h3>
+          <ul>
+            <li>Computer Setup & Repairs</li>
+            <li>WiFi & Network Issues</li>
+            <li>Printer Configuration</li>
+            <li>Software Installation</li>
+            <li>Virus Removal</li>
+            <li>Data Backup & Recovery</li>
+          </ul>
+        </div>
+        <div class="info-card">
+          <h3>Pricing</h3>
+          <ul>
+            <li>$75/hour (1 hour minimum)</li>
+            <li>Most issues resolved in 1-2 hours</li>
+            <li>No fix, no fee guarantee</li>
+            <li>Senior discount available</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-section">
+      <h2>Book an Appointment</h2>
+      <p>Choose a time that works for you. We'll confirm your appointment within 2 hours during business hours.</p>
+      <div class="form-embed">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScAsBjSWuPL2Ong6X-xTPGt2TJs7CmnARo_5lkESshCJEH5gQ/viewform?embedded=true" width="100%" height="1000" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+      </div>
     </div>
   </main>
-  <footer>
-    <div class="footer-content">
-        <div class="footer-left">
-            <div class="footer-links">
-                <a href="privacy.html">Privacy</a>
-                <a href="terms.html">Terms</a>
-            </div>
-            <div class="copyright">&copy; 2025 T&H WebWorks</div>
-        </div>
-        <div class="social-links">
-            <a href="https://github.com/T-H-Webworks" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-            <a href="https://www.facebook.com/people/TH-Webworks/61572906862964/#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-            <a href="https://www.instagram.com/th.webworks?igsh=MTA1aGVuNHAxNWp5dw==" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        </div>
-    </div>
-  </footer>
+  <div id="footer-placeholder"></div>
+
+  <script src="js/components.js"></script>
+  <script src="js/nav.js"></script>
 </body>
 </html> 
