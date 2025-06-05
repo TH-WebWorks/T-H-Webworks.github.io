@@ -1,3 +1,5 @@
+ ![T&H WebWorks Logo](assets/TH_Assets/logo_nav_trans.webp)
+
 # T&H WebWorks Official Website
 
 Welcome to the **T&H WebWorks** official website repository! This is the public-facing website for our web design business, showcasing our services, portfolio, and contact information.
