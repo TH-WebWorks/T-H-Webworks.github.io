@@ -425,6 +425,13 @@
     padding: var(--space-4);
     border-radius: 0.5rem;
     margin-bottom: var(--space-4);
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+}
+
+.alert i {
+    font-size: var(--text-xl);
 }
 
 .alert-info {
@@ -434,9 +441,9 @@
 }
 
 .alert-success {
-    background-color: rgba(34, 197, 94, 0.1);
-    border: 1px solid rgba(34, 197, 94, 0.2);
-    color: rgb(34, 197, 94);
+    background-color: rgba(16, 185, 129, 0.1);
+    border: 1px solid var(--green-600);
+    color: var(--green-400);
 }
 
 .alert-warning {
@@ -447,8 +454,8 @@
 
 .alert-error {
     background-color: rgba(239, 68, 68, 0.1);
-    border: 1px solid rgba(239, 68, 68, 0.2);
-    color: rgb(239, 68, 68);
+    border: 1px solid var(--red-600);
+    color: var(--red-400);
 }
 
 /* Tooltip Component */

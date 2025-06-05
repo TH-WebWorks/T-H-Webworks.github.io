@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Book Tech Support - T&H WebWorks</title>
+  <meta name="description" content="Professional in-home tech support services in Des Moines and surrounding areas. Computer repairs, WiFi setup, software help, and more.">
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/navigation.css">
   <link rel="stylesheet" href="css/components.css">
@@ -14,53 +15,278 @@
   <link rel="icon" type="image/png" href="favicon.png">
 </head>
 <body class="page-wrapper">
-  <div class="background-blobs">
-    <span class="blob blob-blue"></span>
-    <span class="blob blob-orange"></span>
-  </div>
   <div id="header-placeholder"></div>
-  <main class="contact-page">
-    <div class="page-header">
-      <h1 class="services-title">Tech Support</h1>
-      <p>Professional in-home tech support in Des Moines and surrounding areas.</p>
-    </div>
-
-    <div class="support-intro">
-      <div class="info-grid">
-        <div class="info-card">
-          <h3>Services</h3>
-          <ul>
-            <li>Computer Setup & Repairs</li>
-            <li>WiFi & Network Issues</li>
-            <li>Printer Configuration</li>
-            <li>Software Installation</li>
-            <li>Virus Removal</li>
-            <li>Data Backup & Recovery</li>
-          </ul>
+  
+  <main>
+    <section class="section-sm">
+      <div class="container">
+        <div class="page-header text-center">
+          <h1 class="fade-in">Tech Support</h1>
+          <p class="slide-up">Professional in-home tech support in Des Moines and surrounding areas.</p>
         </div>
-        <div class="info-card">
-          <h3>Pricing</h3>
-          <ul>
-            <li>$75/hour (1 hour minimum)</li>
-            <li>Most issues resolved in 1-2 hours</li>
-            <li>No fix, no fee guarantee</li>
-            <li>Senior discount available</li>
-          </ul>
+
+        <div class="max-w-3xl mx-auto">
+          <div class="card contact-form-container p-8">
+            <h2 class="text-2xl font-bold mb-6 text-center">Book an Appointment</h2>
+            <p class="text-gray-300 mb-8 text-center">Professional in-home tech support • $75/hour • Senior discount available</p>
+            
+            <form id="tech-support-form" class="space-y-6">
+              <input type="hidden" name="_subject" value="New Tech Support Request">
+              <div class="form-group">
+                <label for="name" class="form-label">Full Name</label>
+                <div class="input-group">
+                  <i class="fas fa-user"></i>
+                  <input type="text" id="name" name="name" class="form-input" required placeholder="Enter your full name">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="email" class="form-label">Email Address</label>
+                <div class="input-group">
+                  <i class="fas fa-envelope"></i>
+                  <input type="email" id="email" name="email" class="form-input" required placeholder="Enter your email address">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="phone" class="form-label">Phone Number</label>
+                <div class="input-group">
+                  <i class="fas fa-phone"></i>
+                  <input type="tel" id="phone" name="phone" class="form-input" required placeholder="Enter your phone number">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="address" class="form-label">Service Address <span class="text-sm text-gray-400">(optional)</span></label>
+                <div class="input-group">
+                  <i class="fas fa-map-marker-alt"></i>
+                  <input type="text" id="address" name="address" class="form-input" placeholder="Enter your service address if known">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="service" class="form-label">Type of Service</label>
+                <div class="input-group">
+                  <i class="fas fa-tools"></i>
+                  <select id="service" name="service" class="form-input" required>
+                    <option value="">Select the type of service needed</option>
+                    <option value="computer_repair">Computer Repair & Setup</option>
+                    <option value="wifi_network">WiFi & Network Issues</option>
+                    <option value="printer">Printer Setup & Troubleshooting</option>
+                    <option value="software">Software Installation & Support</option>
+                    <option value="virus">Virus & Malware Removal</option>
+                    <option value="data">Data Backup & Recovery</option>
+                    <option value="other">Other Technical Support</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="preferred_time" class="form-label">Preferred Appointment Time</label>
+                <div class="input-group">
+                  <i class="fas fa-clock"></i>
+                  <select id="preferred_time" name="preferred_time" class="form-input" required>
+                    <option value="">Select your preferred time slot</option>
+                    <option value="morning">Morning (9:00 AM - 12:00 PM)</option>
+                    <option value="afternoon">Afternoon (12:00 PM - 4:00 PM)</option>
+                    <option value="evening">Evening (4:00 PM - 7:00 PM)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="message" class="form-label">Issue Description</label>
+                <div class="input-group">
+                  <i class="fas fa-comment"></i>
+                  <textarea id="message" name="message" rows="5" class="form-input" required 
+                    placeholder="Please describe the technical issue you're experiencing in detail. Include any relevant information that might help us prepare for the service visit."></textarea>
+                </div>
+              </div>
+
+              <button type="submit" class="button button-primary w-full">
+                <i class="fas fa-calendar-check mr-2"></i>
+                Schedule Service
+              </button>
+
+              <p class="text-sm text-gray-400 text-center mt-4">
+                We'll confirm your appointment within 2 hours during business hours.
+              </p>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
-
-    <div class="form-section">
-      <h2>Book an Appointment</h2>
-      <p>Choose a time that works for you. We'll confirm your appointment within 2 hours during business hours.</p>
-      <div class="form-embed">
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScAsBjSWuPL2Ong6X-xTPGt2TJs7CmnARo_5lkESshCJEH5gQ/viewform?embedded=true" width="100%" height="1000" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-      </div>
-    </div>
+    </section>
   </main>
+
   <div id="footer-placeholder"></div>
 
   <script src="js/components.js"></script>
   <script src="js/nav.js"></script>
+  <script src="js/email.js"></script>
+
+  <style>
+    .support-pricing {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 2rem;
+      background: linear-gradient(145deg, var(--gray-900), var(--gray-800));
+      border: 1px solid var(--gray-700);
+      border-radius: 1rem;
+    }
+
+    .price-tag {
+      margin-bottom: 1.5rem;
+    }
+
+    .price-tag .amount {
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--blue-400);
+    }
+
+    .price-tag .period {
+      font-size: 1.5rem;
+      color: var(--gray-400);
+    }
+
+    .features {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      color: var(--gray-300);
+    }
+
+    .features li {
+      margin: 0.5rem 0;
+      font-size: 1.1rem;
+    }
+
+    .service-highlights {
+      text-align: center;
+    }
+
+    .service-highlights h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: var(--white);
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .service-item {
+      padding: 1.5rem;
+      background: linear-gradient(145deg, var(--gray-900), var(--gray-800));
+      border: 1px solid var(--gray-700);
+      border-radius: 0.75rem;
+      transition: transform 0.3s ease;
+    }
+
+    .service-item:hover {
+      transform: translateY(-4px);
+    }
+
+    .service-item i {
+      font-size: 2rem;
+      color: var(--blue-400);
+      margin-bottom: 1rem;
+    }
+
+    .service-item h3 {
+      font-size: 1.1rem;
+      color: var(--white);
+      margin: 0;
+    }
+
+    .booking-form {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+      background: linear-gradient(145deg, var(--gray-900), var(--gray-800));
+      border: 1px solid var(--gray-700);
+      border-radius: 1rem;
+    }
+
+    .booking-form h2 {
+      font-size: 2rem;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+
+    .booking-form p {
+      color: var(--gray-300);
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: var(--gray-300);
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.75rem;
+      background: var(--gray-800);
+      border: 1px solid var(--gray-600);
+      border-radius: 0.5rem;
+      color: var(--white);
+      font-size: 1rem;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--blue-400);
+    }
+
+    .button {
+      width: 100%;
+      padding: 1rem;
+      font-size: 1.1rem;
+    }
+
+    .button i {
+      margin-right: 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .booking-form {
+        padding: 1.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .price-tag .amount {
+        font-size: 2.5rem;
+      }
+
+      .price-tag .period {
+        font-size: 1.25rem;
+      }
+    }
+  </style>
 </body>
 </html> 

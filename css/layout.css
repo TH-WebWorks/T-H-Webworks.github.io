@@ -20,7 +20,7 @@ main {
     width: 100%;
     max-width: var(--container-xl);
     margin: 0 auto;
-    padding: 0 var(--space-6);
+    padding: 0 var(--space-4);
     position: relative;
     z-index: 2;
 }
@@ -299,6 +299,10 @@ section {
     .legal-content {
         padding: var(--space-6);
     }
+
+    .container {
+        padding: 0 var(--space-3);
+    }
 }
 
 @media (max-width: 640px) {
@@ -315,6 +319,12 @@ section {
 
     .page-header::after {
         width: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 var(--space-2);
     }
 }
 
@@ -405,11 +415,7 @@ section {
 /* Footer */
 .footer {
     padding: var(--space-16) 0 var(--space-6);
-    background: linear-gradient(
-        to bottom,
-        var(--gray-900) 0%,
-        var(--black) 100%
-    );
+    background: linear-gradient(to bottom, var(--gray-900) 0%, var(--black) 100%);
     border-top: 1px solid var(--gray-800);
     position: relative;
     overflow: hidden;
@@ -424,12 +430,7 @@ section {
     left: 0;
     right: 0;
     height: 1px;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        var(--blue-500),
-        transparent
-    );
+    background: linear-gradient(90deg, transparent, var(--blue-500), transparent);
     opacity: 0.2;
 }
 
@@ -437,7 +438,7 @@ section {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1.5fr;
     gap: var(--space-8);
-    margin-bottom: var(--space-12);
+    margin-bottom: var(--space-8);
 }
 
 .footer-section {
@@ -609,5 +610,19 @@ section {
 @media (min-width: 1024px) {
     .container {
         padding: 0 var(--space-8);
+    }
+}
+
+@media (max-width: 1024px) {
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-6);
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
     }
 } 

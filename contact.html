@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/utilities.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 <body class="page-wrapper">
     <div class="background-blobs">
@@ -65,7 +66,8 @@
 
                     <div class="card contact-form-container p-8">
                         <h2 class="text-2xl font-bold mb-6">Send us a message</h2>
-                        <form action="#" method="POST" class="space-y-6">
+                        <form id="contact-form" class="space-y-6">
+                            <input type="hidden" name="_subject" value="New Contact Form Submission">
                             <div class="form-group">
                                 <label for="name" class="form-label">Name</label>
                                 <div class="input-group">
@@ -86,7 +88,7 @@
                                 <label for="service" class="form-label">Service Needed</label>
                                 <div class="input-group">
                                     <i class="fas fa-cog"></i>
-                                    <select id="service" name="service" class="form-input">
+                                    <select id="service" name="service" class="form-input" required>
                                         <option value="">Select a service</option>
                                         <option value="website">Website Development</option>
                                         <option value="tech-support">Tech Support</option>
@@ -150,5 +152,6 @@
 
     <script src="js/components.js"></script>
     <script src="js/nav.js"></script>
+    <script src="js/email.js"></script>
 </body>
 </html> 
