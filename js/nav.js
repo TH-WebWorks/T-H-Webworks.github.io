@@ -83,10 +83,58 @@ function initializeNavigation() {
     });
 }
 
+// Initialize services dropdown functionality
+function initializeServicesDropdown() {
+    const dropdown = document.querySelector('.services-dropdown');
+    const trigger = document.querySelector('.dropdown-trigger');
+    const menu = document.querySelector('.dropdown-menu');
+
+    if (!dropdown || !trigger || !menu) return;
+
+    // Toggle dropdown on button click
+    trigger.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        const isOpen = menu.classList.contains('show');
+        
+        if (isOpen) {
+            menu.classList.remove('show');
+            menu.style.opacity = '0';
+            menu.style.visibility = 'hidden';
+        } else {
+            menu.classList.add('show');
+            menu.style.opacity = '1';
+            menu.style.visibility = 'visible';
+        }
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!dropdown.contains(e.target)) {
+            menu.classList.remove('show');
+            menu.style.opacity = '0';
+            menu.style.visibility = 'hidden';
+        }
+    });
+
+    // Close dropdown on escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            menu.classList.remove('show');
+            menu.style.opacity = '0';
+            menu.style.visibility = 'hidden';
+        }
+    });
+}
+
 // Initialize navigation when the script loads
 document.addEventListener('DOMContentLoaded', () => {
     // If components are already loaded, initialize navigation
     if (document.querySelector('.navbar')) {
         initializeNavigation();
     }
+    
+    // Initialize services dropdown
+    initializeServicesDropdown();
 }); 

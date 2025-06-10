@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Book Tech Support - T&H WebWorks</title>
-  <meta name="description" content="Professional in-home tech support services in Des Moines and surrounding areas. Computer repairs, WiFi setup, software help, and more.">
+  <title>Tech Support - T&H WebWorks</title>
+  <meta name="description" content="Professional in-home and remote tech support services in Des Moines, Iowa.">
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/navigation.css">
   <link rel="stylesheet" href="css/components.css">
@@ -15,104 +15,35 @@
   <link rel="icon" type="image/png" href="favicon.png">
 </head>
 <body class="page-wrapper">
+  <div class="background-blobs">
+    <span class="blob blob-blue"></span>
+    <span class="blob blob-orange"></span>
+  </div>
   <div id="header-placeholder"></div>
   
   <main>
     <section class="section-sm">
       <div class="container">
-        <div class="page-header text-center">
+        <div class="page-header">
           <h1 class="fade-in">Tech Support</h1>
-          <p class="slide-up">Professional in-home tech support in Des Moines and surrounding areas.</p>
+          <p class="slide-up">Professional in-home and remote tech help for computers, WiFi, software, and more.</p>
         </div>
-
-        <div class="max-w-3xl mx-auto">
-          <div class="card contact-form-container p-8">
-            <h2 class="text-2xl font-bold mb-6 text-center">Book an Appointment</h2>
-            <p class="text-gray-300 mb-8 text-center">Professional in-home tech support • $75/hour • Senior discount available</p>
-            
-            <form id="tech-support-form" class="space-y-6">
-              <input type="hidden" name="_subject" value="New Tech Support Request">
-              <div class="form-group">
-                <label for="name" class="form-label">Full Name</label>
-                <div class="input-group">
-                  <i class="fas fa-user"></i>
-                  <input type="text" id="name" name="name" class="form-input" required placeholder="Enter your full name">
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label for="email" class="form-label">Email Address</label>
-                <div class="input-group">
-                  <i class="fas fa-envelope"></i>
-                  <input type="email" id="email" name="email" class="form-input" required placeholder="Enter your email address">
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label for="phone" class="form-label">Phone Number</label>
-                <div class="input-group">
-                  <i class="fas fa-phone"></i>
-                  <input type="tel" id="phone" name="phone" class="form-input" required placeholder="Enter your phone number">
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label for="address" class="form-label">Service Address <span class="text-sm text-gray-400">(optional)</span></label>
-                <div class="input-group">
-                  <i class="fas fa-map-marker-alt"></i>
-                  <input type="text" id="address" name="address" class="form-input" placeholder="Enter your service address if known">
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label for="service" class="form-label">Type of Service</label>
-                <div class="input-group">
-                  <i class="fas fa-tools"></i>
-                  <select id="service" name="service" class="form-input" required>
-                    <option value="">Select the type of service needed</option>
-                    <option value="computer_repair">Computer Repair & Setup</option>
-                    <option value="wifi_network">WiFi & Network Issues</option>
-                    <option value="printer">Printer Setup & Troubleshooting</option>
-                    <option value="software">Software Installation & Support</option>
-                    <option value="virus">Virus & Malware Removal</option>
-                    <option value="data">Data Backup & Recovery</option>
-                    <option value="other">Other Technical Support</option>
-                  </select>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label for="preferred_time" class="form-label">Preferred Appointment Time</label>
-                <div class="input-group">
-                  <i class="fas fa-clock"></i>
-                  <select id="preferred_time" name="preferred_time" class="form-input" required>
-                    <option value="">Select your preferred time slot</option>
-                    <option value="morning">Morning (9:00 AM - 12:00 PM)</option>
-                    <option value="afternoon">Afternoon (12:00 PM - 4:00 PM)</option>
-                    <option value="evening">Evening (4:00 PM - 7:00 PM)</option>
-                  </select>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label for="message" class="form-label">Issue Description</label>
-                <div class="input-group">
-                  <i class="fas fa-comment"></i>
-                  <textarea id="message" name="message" rows="5" class="form-input" required 
-                    placeholder="Please describe the technical issue you're experiencing in detail. Include any relevant information that might help us prepare for the service visit."></textarea>
-                </div>
-              </div>
-
-              <button type="submit" class="button button-primary w-full">
-                <i class="fas fa-calendar-check mr-2"></i>
-                Schedule Service
-              </button>
-
-              <p class="text-sm text-gray-400 text-center mt-4">
-                We'll confirm your appointment within 2 hours during business hours.
-              </p>
-            </form>
-          </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container max-w-2xl mx-auto">
+        <div class="card p-8">
+          <h2 class="text-2xl font-semibold mb-4">Our Tech Support Services</h2>
+          <ul class="service-features mb-8">
+            <li class="transition-fast">Computer Repairs & Troubleshooting</li>
+            <li class="transition-fast">WiFi & Network Setup</li>
+            <li class="transition-fast">Software Installation & Help</li>
+            <li class="transition-fast">Data Recovery</li>
+            <li class="transition-fast">Device Setup (Printers, Smart Home, etc.)</li>
+            <li class="transition-fast">Virus & Malware Removal</li>
+          </ul>
+          <p class="mb-8">We offer clear communication, fast service, and solutions tailored to your needs. Senior discounts available.</p>
+          <a href="contact.html" class="button button-primary w-full text-center text-lg">Book Tech Support</a>
         </div>
       </div>
     </section>
