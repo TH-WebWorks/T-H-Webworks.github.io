@@ -1,8 +1,8 @@
 /* Base Styles and Typography */
 :root {
     /* Colors */
-    --black: #000;
-    --white: #fff;
+    --black: #000000;
+    --white: #ffffff;
     --gray-50: #f9fafb;
     --gray-100: #f3f4f6;
     --gray-200: #e5e7eb;
@@ -14,13 +14,16 @@
     --gray-800: #1f2937;
     --gray-900: #111827;
     --blue-400: #60a5fa;
-    --blue-500: #0ea5e9;
-    --blue-600: #0284c7;
+    --blue-500: #3b82f6;
+    --blue-600: #2563eb;
     --blue-700: #0369a1;
     --accent: #06b6d4;
     --primary: #3b82f6;
     --primary-dark: #2563eb;
     --primary-light: #60a5fa;
+    --orange: #f4a418;
+    --orange-light: #fbbf24;
+    --orange-dark: #d97706;
 
     /* Typography */
     --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -473,4 +476,40 @@ section {
 img {
     max-width: 100%;
     height: auto;
+}
+
+/* Dark Background */
+.dark-bg {
+    background-color: var(--black);
+    background-image: 
+        radial-gradient(circle at 25% 25%, rgba(59, 130, 246, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(37, 99, 235, 0.05) 0%, transparent 50%);
+    min-height: 100vh;
+}
+
+/* Glow Effect */
+.glow-effect {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(37, 99, 235, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
+    animation: glow-pulse 8s ease-in-out infinite;
+}
+
+@keyframes glow-pulse {
+    0%, 100% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.8;
+        transform: scale(1.05);
+    }
 } 

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found - T&H WebWorks</title>
+    <meta name="description" content="The page you're looking for couldn't be found. Return to T&H WebWorks homepage.">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/navigation.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <style>
+        .error-code {
+            font-size: 12rem;
+            font-weight: 800;
+            background: linear-gradient(45deg, #3b82f6, #f4a418);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 30px rgba(59, 130, 246, 0.3);
+            animation: float 6s ease-in-out infinite;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .error-code:hover {
+            transform: scale(1.05) rotate(5deg);
+            text-shadow: 0 0 50px rgba(244, 164, 24, 0.5);
+        }
+        .error-container {
+            position: relative;
+            padding: 4rem 0;
+        }
+        .error-container::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, rgba(244, 164, 24, 0.05) 50%, rgba(59, 130, 246, 0) 70%);
+            border-radius: 50%;
+            animation: pulse 4s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        @keyframes pulse {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+            50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.3; }
+        }
+        .error-message {
+            position: relative;
+            z-index: 1;
+        }
+        .easter-egg {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            background: linear-gradient(135deg, #f4a418, #d97706);
+            color: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            text-align: center;
+            z-index: 1000;
+            opacity: 0;
+            transition: all 0.5s ease;
+            box-shadow: 0 20px 40px rgba(244, 164, 24, 0.3);
+        }
+        .easter-egg.show {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1;
+        }
+        .easter-egg h3 {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        .easter-egg p {
+            margin-bottom: 1.5rem;
+        }
+        .close-easter-egg {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .close-easter-egg:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+        .click-counter {
+            position: absolute;
+            bottom: 1rem;
+            right: 1rem;
+            color: var(--gray-500);
+            font-size: 0.875rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .click-counter.show {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="page-wrapper">
+    <div class="background-blobs">
+        <span class="blob blob-blue"></span>
+        <span class="blob blob-orange"></span>
+    </div>
+
+    <div id="header-placeholder"></div>
+
+    <main>
+        <section class="section-sm">
+            <div class="container">
+                <div class="error-container text-center">
+                    <div class="error-message">
+                        <h1 class="error-code mb-4" id="error-code">404</h1>
+                        <p class="text-2xl text-gray-300 mb-6 slide-up">Oops! Page Not Found</p>
+                        <div class="max-w-2xl mx-auto">
+                            <p class="text-gray-400 mb-8 text-lg">The page you're looking for might have been moved, deleted, or never existed. Let's get you back on track!</p>
+                            <div class="flex gap-6 justify-center items-center">
+                                <a href="index.html" class="button button-primary transition hover:scale-105">
+                                    <i class="fas fa-home mr-2"></i>
+                                    <span class="font-semibold">Go Home</span>
+                                </a>
+                                <a href="contact.html" class="button button-secondary transition hover:opacity-75">
+                                    <i class="fas fa-envelope mr-2"></i>
+                                    <span class="font-semibold">Contact Us</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="click-counter" id="click-counter">Clicks: <span id="click-count">0</span></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Easter Egg Modal -->
+    <div class="easter-egg" id="easter-egg">
+        <h3>🎉 You Found the Easter Egg! 🎉</h3>
+        <p>Congratulations! You discovered our hidden surprise by clicking the 404 multiple times!</p>
+        <p>Here's a fun fact: The first 404 error was recorded at CERN in 1992. The room where the web's central database was located was called "Room 404"!</p>
+        <button class="close-easter-egg" onclick="closeEasterEgg()">Cool! Close</button>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="js/components.js"></script>
+    <script src="js/nav.js"></script>
+    <script>
+        let clickCount = 0;
+        const errorCode = document.getElementById('error-code');
+        const clickCounter = document.getElementById('click-counter');
+        const clickCountSpan = document.getElementById('click-count');
+        const easterEgg = document.getElementById('easter-egg');
+
+        errorCode.addEventListener('click', function() {
+            clickCount++;
+            clickCountSpan.textContent = clickCount;
+            
+            if (clickCount >= 3) {
+                clickCounter.classList.add('show');
+            }
+            
+            if (clickCount >= 7) {
+                easterEgg.classList.add('show');
+                clickCount = 0; // Reset counter
+                clickCounter.classList.remove('show');
+            }
+            
+            // Add a fun shake animation
+            errorCode.style.animation = 'none';
+            setTimeout(() => {
+                errorCode.style.animation = 'float 6s ease-in-out infinite';
+            }, 100);
+        });
+
+        function closeEasterEgg() {
+            easterEgg.classList.remove('show');
+            clickCount = 0;
+            clickCountSpan.textContent = '0';
+        }
+
+        // Close easter egg when clicking outside
+        easterEgg.addEventListener('click', function(e) {
+            if (e.target === easterEgg) {
+                closeEasterEgg();
+            }
+        });
+    </script>
+</body>
+</html> 

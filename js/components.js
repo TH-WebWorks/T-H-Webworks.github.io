@@ -14,13 +14,13 @@ async function loadComponent(url, targetId) {
 // Load components when DOM is ready
 document.addEventListener('DOMContentLoaded', async function() {
     // Load header component
-    await loadComponent('components/header.html', 'header-placeholder');
+    const headerLoaded = await loadComponent('components/header.html', 'header-placeholder');
     
     // Load footer component
     await loadComponent('components/footer.html', 'footer-placeholder');
     
-    // Initialize navigation after components are loaded
-    if (typeof initializeNavigation === 'function') {
+    // Initialize navigation after header is loaded
+    if (headerLoaded) {
         initializeNavigation();
     }
 });
