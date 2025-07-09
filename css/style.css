@@ -311,24 +311,6 @@ body {
     line-height: 1.6;
 }
 
-.service-features {
-    list-style: none;
-}
-
-.service-features li {
-    color: var(--gray-400);
-    padding: 0.5rem 0;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.service-features li::before {
-    content: '•';
-    color: var(--accent);
-    font-weight: bold;
-}
-
 /* Pricing Section */
 .pricing-section {
     margin-top: 5rem;
@@ -1032,15 +1014,21 @@ footer {
 
 .service-features li {
     color: var(--gray-400);
-    padding: 0.5rem 0;
+    padding: 0.5rem 0 0.5rem 1.5rem;
     display: flex;
     align-items: center;
     gap: 0.75rem;
+    position: relative;
 }
 
 .service-features li::before {
     content: '•';
-    color: var(--primary);
+    color: var(--accent);
+    font-weight: bold;
+    font-size: 1.2em;
+    position: absolute;
+    left: 0;
+    top: 0.1em;
 }
 
 .pricing-section {
@@ -2800,4 +2788,51 @@ p,
     color: var(--gray-300);
     margin-bottom: 2rem;
 }
+
+
+@media (max-width: 600px) {
+  .services-grid {
+    gap: 1.2rem;
+    padding: 0 0.5rem;
+  }
+  .service-card {
+    background: rgba(31,41,55,0.95); /* lighter than pure black */
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(14, 165, 233, 0.10), 0 1.5px 8px rgba(0,0,0,0.18);
+    border: 1.5px solid #232a36;
+    padding: 2rem 1.2rem 1.7rem 1.2rem;
+    margin-bottom: 0.5rem;
+    text-align: left;
+    transition: box-shadow 0.2s;
+  }
+  .service-card .card-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #2563eb 0%, #60a5fa 100%);
+    border-radius: 50%;
+    width: 54px;
+    height: 54px;
+    margin-bottom: 1.2rem;
+    box-shadow: 0 2px 8px rgba(14, 165, 233, 0.10);
+  }
+  .service-card .card-icon i {
+    color: #fff;
+    font-size: 1.7rem;
+  }
+  .service-card .card-title {
+    font-size: 1.18rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.7rem;
+    letter-spacing: 0.01em;
+  }
+  .service-card .card-body {
+    color: #d1d5db;
+    font-size: 0.98rem;
+    line-height: 1.6;
+    margin-bottom: 0;
+  }
+}
+
 
