@@ -47,5 +47,20 @@ function animateNumbers() {
     });
 }
 
-// Run on page load
-document.addEventListener('DOMContentLoaded', animateNumbers); 
+// Scroll arrow functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const scrollArrow = document.querySelector('.scroll-arrow');
+    const servicesSection = document.querySelector('.services-section');
+    
+    if (scrollArrow && servicesSection) {
+        scrollArrow.addEventListener('click', function() {
+            servicesSection.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        });
+    }
+    
+    // Run animations
+    animateNumbers();
+}); 
