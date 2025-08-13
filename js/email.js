@@ -1,7 +1,6 @@
 // Formspree Configuration
 const FORMSPREE_CONFIG = {
     contact: "https://formspree.io/f/xeokqyje",        // General contact form endpoint
-    tech_support: "https://formspree.io/f/xkgbgzrp",   // Tech support form endpoint
     website_project: "https://formspree.io/f/xvgrgqad" // Website project form endpoint
 };
 
@@ -64,8 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Contact form
     handleFormSubmit('contact-form', 'contact');
     
-    // Tech support form
-    handleFormSubmit('tech-support-form', 'tech_support');
+    
     
     // Website project form
     handleFormSubmit('website-project-form', 'website_project');

@@ -15,7 +15,7 @@ const projects = [
     },
     {
         title: "T&H WebWorks",
-        description: "The official site for T&H WebWorks, a modern tech business in Des Moines offering custom website development and mobile tech support. Built with a focus on branding, polish, and conversion.",
+        description: "The official site for T&H WebWorks, a modern web development studio in Des Moines. Built with a focus on branding, polish, and conversion.",
         image: "assets/portfolio/T&HSite.jpg",
         tech: ["HTML", "CSS", "JavaScript"],
         link: "index.html"
