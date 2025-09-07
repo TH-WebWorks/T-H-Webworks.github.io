@@ -1,3 +1,15 @@
 User-agent: *
 Allow: /
-Sitemap: https://thwebworks.com/sitemap.xml 
+
+# Disallow service worker and manifest from indexing
+Disallow: /sw.js
+Disallow: /manifest.json
+
+# Sitemap location (update with your actual domain)
+Sitemap: https://thwebworks.com/sitemap.xml
+
+# Allow all search engines to crawl the site
+# No restrictions for T&H WebWorks public website
+
+# Crawl-delay for better server performance
+Crawl-delay: 1
