@@ -152,43 +152,95 @@ function initSmoothScrolling() {
     });
 }
 
-// Scroll animations using Intersection Observer
+// Enhanced scroll animations with Apple-style effects
 function initScrollAnimations() {
-    const animatedElements = document.querySelectorAll('.service-card, .portfolio-item, .about-content > *, .contact-content > *');
+    // Add fade-in-up class to all sections
+    const sections = document.querySelectorAll('section');
+    sections.forEach(section => {
+        section.classList.add('fade-in-section');
+    });
+    
+    // Animate section headers
+    const sectionHeaders = document.querySelectorAll('.section-header');
+    const animatedElements = document.querySelectorAll(
+        '.service-card, .portfolio-item, .team-member, .process-step, .stat-item, .about-content > *, .contact-content > *, .contact-item'
+    );
     
     const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
+        threshold: 0.15,
+        rootMargin: '0px 0px -80px 0px'
     };
     
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
+                entry.target.classList.add('visible');
+                // Don't unobserve to allow re-triggering if needed
             }
         });
     }, observerOptions);
     
-    // Set initial state and observe elements
-    animatedElements.forEach(element => {
-        element.style.opacity = '0';
-        element.style.transform = 'translateY(30px)';
-        element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    // Observe section headers with special animation
+    sectionHeaders.forEach((header, index) => {
+        header.classList.add('animate-header');
+        observer.observe(header);
+    });
+    
+    // Observe all animated elements
+    animatedElements.forEach((element, index) => {
+        element.classList.add('animate-element');
         observer.observe(element);
     });
 
-    // Stagger animation for service cards and portfolio items
+    // Stagger animations for grid items
     const serviceCards = document.querySelectorAll('.service-card');
     const portfolioItems = document.querySelectorAll('.portfolio-item');
+    const teamMembers = document.querySelectorAll('.team-member');
+    const processSteps = document.querySelectorAll('.process-step');
+    const statItems = document.querySelectorAll('.stat-item');
     
     serviceCards.forEach((card, index) => {
         card.style.transitionDelay = `${index * 0.1}s`;
     });
     
     portfolioItems.forEach((item, index) => {
-        item.style.transitionDelay = `${index * 0.15}s`;
+        item.style.transitionDelay = `${index * 0.12}s`;
     });
+    
+    teamMembers.forEach((member, index) => {
+        member.style.transitionDelay = `${index * 0.15}s`;
+    });
+    
+    processSteps.forEach((step, index) => {
+        step.style.transitionDelay = `${index * 0.08}s`;
+    });
+    
+    statItems.forEach((item, index) => {
+        item.style.transitionDelay = `${index * 0.1}s`;
+    });
+    
+    // Parallax scroll effect for backgrounds
+    initParallaxScroll();
+}
+
+// Apple-style parallax background scrolling
+function initParallaxScroll() {
+    const parallaxSections = document.querySelectorAll('section');
+    
+    window.addEventListener('scroll', throttle(() => {
+        const scrolled = window.pageYOffset;
+        
+        parallaxSections.forEach((section, index) => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            const sectionMiddle = sectionTop + (sectionHeight / 2);
+            const distance = scrolled - sectionMiddle;
+            const offset = distance * 0.05; // Subtle parallax factor
+            
+            // Apply parallax to pseudo-elements via CSS variables
+            section.style.setProperty('--parallax-offset', `${offset}px`);
+        });
+    }, 16), { passive: true });
 }
 
 // Typing animation for the logo cursor
