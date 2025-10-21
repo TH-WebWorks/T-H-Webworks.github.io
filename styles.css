@@ -488,44 +488,67 @@ body::before {
 .code-string { color: #ce9178; }
 
 .hero-title {
-    font-size: clamp(3rem, 6vw, 4.5rem);
+    font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 700;
     line-height: 1.1;
-    margin-bottom: var(--space-xl);
-    letter-spacing: -0.02em;
+    margin-bottom: var(--space-lg);
+    letter-spacing: -0.03em;
 }
 
 .title-line {
     display: block;
+    animation: slideInUp 0.8s ease forwards;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.title-line:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+@keyframes slideInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .hero-description {
-    font-size: 1.25rem;
-    line-height: 1.7;
-    margin-bottom: var(--space-3xl);
+    font-size: 1.125rem;
+    margin-bottom: var(--space-xl);
     opacity: 0.9;
-    font-weight: 400;
+    animation: fadeIn 0.8s ease forwards;
+    animation-delay: 0.4s;
+    opacity: 0;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 0.9;
+    }
 }
 
 .hero-buttons {
     display: flex;
     gap: var(--space-lg);
-    flex-wrap: wrap;
+    animation: fadeIn 0.8s ease forwards;
+    animation-delay: 0.6s;
+    opacity: 0;
 }
 
 .btn {
     display: inline-flex;
     align-items: center;
-    padding: 1rem var(--space-xl);
-    border-radius: 12px;
+    padding: var(--space-md) var(--space-xl);
+    border-radius: var(--radius-md);
     text-decoration: none;
     font-weight: 600;
     transition: all var(--transition-normal);
     border: 2px solid transparent;
     cursor: pointer;
-    font-size: 1.125rem;
-    min-height: 56px;
-    touch-action: manipulation;
+    font-size: 1rem;
+    min-height: 44px; /* Touch-friendly size */
+    touch-action: manipulation; /* Prevent zoom on double-tap */
 }
 
 .btn-primary {
@@ -2004,81 +2027,59 @@ section {
         background-color: var(--primary-color);
     }
 
-    /* Hero Section Mobile - Clean & Professional */
+    /* Hero Section Mobile */
     .hero {
-        min-height: 100vh;
+        min-height: calc(100vh - 60px);
         padding-top: 60px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
     }
 
     .hero-container {
         grid-template-columns: 1fr;
         text-align: center;
         gap: var(--space-2xl);
-        padding: var(--space-3xl) var(--space-lg);
-        max-width: 100%;
+        padding: var(--space-xl) var(--space-lg);
     }
 
-    /* Hide desktop code block on mobile */
-    .code-block {
-        display: none;
-    }
-
-    /* Hide desktop visual elements on mobile */
     .hero-visual {
-        display: none;
+        height: 250px;
+        order: -1;
     }
 
-    .hero-content {
-        max-width: 100%;
+    .tech-element {
+        font-size: 0.75rem;
+        padding: var(--space-xs) var(--space-sm);
+    }
+
+    .code-block {
+        font-size: 0.75rem;
+        margin-bottom: var(--space-lg);
+    }
+
+    .code-content {
+        padding: var(--space-md);
     }
 
     .hero-title {
-        font-size: clamp(2.5rem, 12vw, 3.5rem);
-        margin-bottom: var(--space-xl);
-        line-height: 1.1;
-        font-weight: 700;
-        letter-spacing: -0.02em;
-    }
-
-    .title-line {
-        display: inline;
+        font-size: clamp(2rem, 8vw, 2.5rem);
+        margin-bottom: var(--space-md);
     }
 
     .hero-description {
-        font-size: 1.125rem;
-        line-height: 1.7;
-        margin-bottom: var(--space-3xl);
-        max-width: 600px;
-        margin-left: auto;
-        margin-right: auto;
-        opacity: 0.9;
-        font-weight: 400;
+        font-size: 1rem;
+        margin-bottom: var(--space-lg);
     }
 
     .hero-buttons {
         flex-direction: column;
         width: 100%;
-        gap: var(--space-lg);
         max-width: 400px;
         margin: 0 auto;
+        gap: var(--space-md);
     }
 
     .hero-buttons .btn {
         width: 100%;
         justify-content: center;
-        padding: 1.25rem var(--space-xl);
-        font-size: 1.125rem;
-        font-weight: 600;
-        min-height: 56px;
-        border-radius: 12px;
-    }
-
-    .scroll-indicator {
-        display: block;
-        bottom: var(--space-xl);
     }
 
     /* Sections Mobile */
@@ -2106,118 +2107,56 @@ section {
     /* Cards Mobile */
     .services-grid {
         grid-template-columns: 1fr;
-        gap: var(--space-xl);
+        gap: var(--space-lg);
     }
 
     .service-card {
-        padding: var(--space-xl);
-        box-shadow: 
-            0 10px 30px rgba(0, 0, 0, 0.4),
-            inset 0 1px 0 rgba(255, 255, 255, 0.05);
-    }
-
-    .service-card:active {
-        transform: scale(0.98);
+        padding: var(--space-lg);
     }
 
     .service-icon {
-        width: 56px;
-        height: 56px;
-        margin-bottom: var(--space-md);
+        width: 50px;
+        height: 50px;
     }
 
     .service-icon svg {
-        width: 26px;
-        height: 26px;
+        width: 24px;
+        height: 24px;
     }
 
     .service-title {
-        font-size: 1.1875rem;
-        margin-bottom: var(--space-md);
-    }
-
-    .service-description {
-        font-size: 0.9375rem;
-        line-height: 1.65;
-        margin-bottom: var(--space-md);
+        font-size: 1.125rem;
     }
 
     .portfolio-grid {
         grid-template-columns: 1fr;
-        gap: var(--space-xl);
+        gap: var(--space-lg);
     }
 
     .portfolio-item {
-        margin-bottom: 0;
-        box-shadow: 
-            0 10px 30px rgba(0, 0, 0, 0.4),
-            inset 0 1px 0 rgba(255, 255, 255, 0.05);
-    }
-
-    .portfolio-item:active {
-        transform: scale(0.98);
+        margin-bottom: var(--space-md);
     }
 
     .portfolio-image {
-        height: 240px;
+        height: 200px;
     }
 
     .portfolio-content {
-        padding: var(--space-xl);
-    }
-
-    .portfolio-title {
-        font-size: 1.3125rem;
-        margin-bottom: var(--space-md);
-    }
-
-    .portfolio-description {
-        font-size: 0.9375rem;
-        line-height: 1.65;
-        margin-bottom: var(--space-md);
-    }
-
-    .portfolio-actions {
-        margin-top: var(--space-lg);
-        padding-top: var(--space-lg);
-    }
-
-    .portfolio-actions .btn {
-        width: 100%;
-        min-height: 48px;
+        padding: var(--space-lg);
     }
 
     /* About Mobile */
     .about-content {
         grid-template-columns: 1fr;
-        gap: var(--space-2xl);
-    }
-
-    .about-text {
-        order: 1;
-    }
-
-    .about-description {
-        font-size: 1rem;
-        line-height: 1.7;
-        margin-bottom: var(--space-xl);
+        gap: var(--space-xl);
     }
 
     .about-visual {
-        order: 2;
-        display: flex;
-        justify-content: center;
-        padding: 0 var(--space-md);
+        order: -1;
     }
 
     .code-editor {
         max-width: 100%;
-        width: 100%;
-    }
-
-    .editor-content {
-        padding: var(--space-md);
-        font-size: 0.75rem;
     }
 
     .stats-grid {
@@ -2226,22 +2165,17 @@ section {
     }
 
     .stat-item {
-        padding: var(--space-lg);
+        padding: var(--space-md);
     }
 
     .stat-number {
-        font-size: 2.25rem;
-    }
-
-    .stat-label {
-        font-size: 0.875rem;
+        font-size: 1.75rem;
     }
 
     /* Team Mobile */
     .team-grid {
         grid-template-columns: 1fr;
-        gap: var(--space-xl);
-        max-width: 500px;
+        gap: var(--space-lg);
     }
     
     .team-member {
@@ -2249,81 +2183,46 @@ section {
     }
     
     .member-image {
-        height: 320px;
+        height: 280px;
     }
 
     .member-info {
-        padding: var(--space-xl);
-    }
-
-    .member-name {
-        font-size: 1.375rem;
-        margin-bottom: var(--space-sm);
-    }
-
-    .member-role {
-        font-size: 1rem;
-        margin-bottom: var(--space-md);
-    }
-
-    .member-bio {
-        font-size: 0.9375rem;
-        line-height: 1.65;
+        padding: var(--space-lg);
     }
 
     /* Process Mobile */
     .process-steps {
         grid-template-columns: 1fr;
-        gap: var(--space-xl);
+        gap: var(--space-lg);
     }
 
     .process-step {
-        padding: var(--space-2xl) var(--space-lg) var(--space-xl);
+        padding: var(--space-lg) var(--space-lg) var(--space-xl);
     }
 
     .step-number {
         font-size: 1rem;
-        width: 48px;
-        height: 48px;
-        top: -14px;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    .step-content {
-        margin-top: var(--space-xl);
+        width: 44px;
+        height: 44px;
+        top: -12px;
     }
 
     .step-title {
         font-size: 1.125rem;
-        text-align: center;
-        margin-bottom: var(--space-md);
-    }
-
-    .step-description {
-        font-size: 0.9375rem;
-        text-align: center;
-        margin-bottom: var(--space-md);
-    }
-
-    .step-features {
-        text-align: left;
     }
 
     /* Contact Mobile */
     .contact-content {
         grid-template-columns: 1fr;
-        gap: var(--space-2xl);
+        gap: var(--space-xl);
     }
 
     .contact-form {
-        padding: var(--space-xl);
-        order: 1;
+        padding: var(--space-lg);
     }
 
     .contact-info {
         gap: var(--space-md);
-        order: 2;
     }
 
     .contact-item {
@@ -2331,19 +2230,8 @@ section {
     }
 
     .contact-icon {
-        width: 48px;
-        height: 48px;
-    }
-
-    .contact-icon svg {
-        width: 22px;
-        height: 22px;
-    }
-
-    button[type="submit"] {
-        width: 100%;
-        min-height: 52px;
-        font-size: 1.0625rem;
+        width: 44px;
+        height: 44px;
     }
 
     /* Footer Mobile */
@@ -2403,25 +2291,9 @@ section {
         height: 30px;
     }
 
-    .hero {
-        padding: var(--space-2xl) 0;
-    }
-
-    .hero-container {
-        padding: var(--space-lg) var(--space-md);
-    }
-
     .hero-title {
-        font-size: 2.25rem;
-        line-height: 1.15;
-        margin-bottom: var(--space-lg);
-    }
-
-    .hero-description {
-        font-size: 1.0625rem;
-        line-height: 1.65;
-        margin-bottom: var(--space-2xl);
-        padding: 0 var(--space-sm);
+        font-size: 1.875rem;
+        line-height: 1.2;
     }
 
     .section-title {
@@ -2430,18 +2302,10 @@ section {
 
     .section-description {
         font-size: 0.9375rem;
-        padding: 0 var(--space-sm);
     }
 
     .hero-buttons {
-        gap: var(--space-md);
-        padding: 0 var(--space-sm);
-    }
-
-    .hero-buttons .btn {
-        padding: 1rem;
-        font-size: 1rem;
-        min-height: 50px;
+        gap: var(--space-sm);
     }
 
     .btn {
@@ -2449,46 +2313,26 @@ section {
         font-size: 0.9375rem;
     }
 
-    .service-card {
-        padding: var(--space-lg);
+    .code-block {
+        font-size: 0.6875rem;
     }
 
-    .portfolio-content {
-        padding: var(--space-lg);
-    }
-
-    .contact-form {
-        padding: var(--space-lg);
-    }
-
-    .member-info {
-        padding: var(--space-lg);
-    }
-
+    .service-card,
+    .portfolio-content,
+    .contact-form,
+    .member-info,
     .process-step {
-        padding: var(--space-lg) var(--space-md) var(--space-xl);
+        padding: var(--space-md);
     }
 
     .service-title,
     .portfolio-title,
     .step-title {
-        font-size: 1.125rem;
-        margin-bottom: var(--space-sm);
-    }
-
-    .service-description,
-    .portfolio-description,
-    .step-description {
-        font-size: 0.9375rem;
-        line-height: 1.6;
+        font-size: 1rem;
     }
 
     .stat-number {
-        font-size: 2rem;
-    }
-
-    .stat-label {
-        font-size: 0.8125rem;
+        font-size: 1.5rem;
     }
 
     .footer-links {
@@ -2525,39 +2369,23 @@ section {
     }
 
     .contact-item {
-        flex-direction: row;
-        text-align: left;
-        gap: var(--space-md);
-        padding: var(--space-lg);
+        flex-direction: column;
+        text-align: center;
+        gap: var(--space-sm);
     }
 
-    .contact-details h4 {
-        font-size: 0.9375rem;
-        margin-bottom: 4px;
-    }
-
-    .contact-details p {
-        font-size: 0.875rem;
-    }
-
-    .portfolio-tech {
-        font-size: 0.8125rem;
-        gap: var(--space-xs);
-    }
-
-    .tech-tag {
-        padding: 4px var(--space-sm);
-        font-size: 0.8125rem;
-    }
-
+    .portfolio-tech,
     .service-features {
         font-size: 0.875rem;
     }
 
-    .service-features li,
-    .step-features li {
-        padding: 6px 0 6px var(--space-md);
-        font-size: 0.875rem;
+    .tech-element {
+        font-size: 0.6875rem;
+        padding: 4px 8px;
+    }
+
+    .hero-visual {
+        height: 200px;
     }
 
     /* Optimize animations for mobile performance */
@@ -2572,30 +2400,23 @@ section {
 
     /* Better button sizing on very small screens */
     .btn {
-        min-height: 50px;
+        min-height: 48px;
+        width: 100%;
+        max-width: 100%;
     }
 
     .btn-sm {
-        min-height: 44px;
-        width: 100%;
+        min-height: 40px;
     }
 
-    .hero-buttons .btn {
-        min-height: 54px;
+    /* Improve scroll indicator visibility */
+    .scroll-indicator {
+        display: none;
     }
 
     /* Better spacing for mobile sections */
     .section-header {
         padding: 0 var(--space-md);
-    }
-
-    .section-title {
-        font-size: clamp(1.625rem, 7vw, 1.875rem);
-    }
-
-    .section-description {
-        font-size: 0.9375rem;
-        line-height: 1.65;
     }
 
     /* Improve touch targets for mobile */
@@ -2611,43 +2432,14 @@ section {
     .portfolio-item,
     .team-member,
     .process-step {
-        margin-bottom: var(--space-lg);
+        margin-bottom: var(--space-md);
     }
 
     /* Optimize images for mobile */
     .portfolio-image,
     .member-image {
-        image-rendering: auto;
-    }
-
-    /* Mobile-specific visual enhancements */
-    .service-icon,
-    .contact-icon {
-        width: 56px;
-        height: 56px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    }
-
-    .service-icon svg,
-    .contact-icon svg {
-        width: 26px;
-        height: 26px;
-    }
-
-    /* Better form styling on mobile */
-    .contact-form {
-        box-shadow: 
-            0 8px 24px rgba(0, 0, 0, 0.4),
-            inset 0 1px 0 rgba(255, 255, 255, 0.05);
-    }
-
-    .form-group {
-        margin-bottom: var(--space-md);
-    }
-
-    .form-group label {
-        font-size: 0.9375rem;
-        font-weight: 600;
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
     }
 }
 
