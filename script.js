@@ -2,9 +2,6 @@
 
 // DOM Content Loaded with performance optimization
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize loading screen
-    initLoadingScreen();
-    
     // Initialize critical components immediately
     initNavigation();
     initSmoothScrolling();
@@ -30,33 +27,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 100);
     }
 });
-
-// Loading screen functionality
-function initLoadingScreen() {
-    const loadingScreen = document.getElementById('loading-screen');
-    
-    // Hide loading screen after page loads
-    window.addEventListener('load', () => {
-        setTimeout(() => {
-            loadingScreen.classList.add('hidden');
-            
-            // Remove from DOM after transition
-            setTimeout(() => {
-                loadingScreen.style.display = 'none';
-            }, 500);
-        }, 1000); // Show for at least 1 second
-    });
-    
-    // Fallback: hide loading screen after 3 seconds max
-    setTimeout(() => {
-        if (!loadingScreen.classList.contains('hidden')) {
-            loadingScreen.classList.add('hidden');
-            setTimeout(() => {
-                loadingScreen.style.display = 'none';
-            }, 500);
-        }
-    }, 3000);
-}
 
 // Navigation functionality
 function initNavigation() {
@@ -226,19 +196,35 @@ function initScrollAnimations() {
 // Apple-style parallax background scrolling
 function initParallaxScroll() {
     const parallaxSections = document.querySelectorAll('section');
+    const body = document.body;
     
     window.addEventListener('scroll', throttle(() => {
         const scrolled = window.pageYOffset;
+        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollProgress = scrolled / maxScroll;
+        
+        // Subtle background shift
+        body.style.setProperty('--scroll-progress', scrollProgress);
         
         parallaxSections.forEach((section, index) => {
             const sectionTop = section.offsetTop;
             const sectionHeight = section.offsetHeight;
             const sectionMiddle = sectionTop + (sectionHeight / 2);
             const distance = scrolled - sectionMiddle;
-            const offset = distance * 0.05; // Subtle parallax factor
+            const offset = distance * 0.03; // Subtle parallax factor
             
             // Apply parallax to pseudo-elements via CSS variables
             section.style.setProperty('--parallax-offset', `${offset}px`);
+            
+            // Calculate visibility percentage
+            const viewportHeight = window.innerHeight;
+            const sectionBottom = sectionTop + sectionHeight;
+            const visibleTop = Math.max(sectionTop, scrolled);
+            const visibleBottom = Math.min(sectionBottom, scrolled + viewportHeight);
+            const visibleHeight = Math.max(0, visibleBottom - visibleTop);
+            const visibilityPercent = visibleHeight / viewportHeight;
+            
+            section.style.setProperty('--visibility', visibilityPercent);
         });
     }, 16), { passive: true });
 }
