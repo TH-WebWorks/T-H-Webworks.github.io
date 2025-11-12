@@ -1,16 +1,16 @@
 // T&H WebWorks Service Worker
 // Provides caching, offline functionality, and performance improvements
 
-const CACHE_NAME = 'th-webworks-v1.0.0';
-const STATIC_CACHE = 'static-v1.0.0';
-const DYNAMIC_CACHE = 'dynamic-v1.0.0';
+const CACHE_NAME = 'th-webworks-v1.1.0';
+const STATIC_CACHE = 'static-v1.1.0';
+const DYNAMIC_CACHE = 'dynamic-v1.1.0';
 
 // Files to cache immediately
 const STATIC_FILES = [
     '/',
     '/index.html',
     '/styles.css',
-    '/script.js',
+    '/script.js?v=20251112',
     '/assets/TH_Assets/logo_nav_trans.webp',
     '/assets/TH_Assets/logo_full_trans.webp',
     '/assets/TH_Assets/logo_full_black.webp',

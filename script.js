@@ -1,7 +1,39 @@
 // T&H WebWorks - Main JavaScript File
 
+// EmailJS configuration (replace placeholders with your EmailJS values)
+const EMAILJS_CONFIG = {
+    serviceId: 'service_y03xglr',
+    templateId: 'template_w0vffia',
+    publicKey: 'YxvfLTO9e1UsK4YwH'
+};
+
+function initEmailJS() {
+    if (!window.emailjs) {
+        console.warn('EmailJS SDK failed to load.');
+        return;
+    }
+
+    if (
+        !EMAILJS_CONFIG.serviceId ||
+        !EMAILJS_CONFIG.templateId ||
+        !EMAILJS_CONFIG.publicKey ||
+        EMAILJS_CONFIG.serviceId.startsWith('YOUR_') ||
+        EMAILJS_CONFIG.templateId.startsWith('YOUR_') ||
+        EMAILJS_CONFIG.publicKey.startsWith('YOUR_')
+    ) {
+        console.warn('EmailJS configuration is incomplete. Update EMAILJS_CONFIG with your credentials.');
+        return;
+    }
+
+    emailjs.init({
+        publicKey: EMAILJS_CONFIG.publicKey
+    });
+}
+
 // DOM Content Loaded with performance optimization
 document.addEventListener('DOMContentLoaded', function() {
+    initEmailJS();
+
     // Initialize critical components immediately
     initNavigation();
     initSmoothScrolling();
@@ -35,8 +67,17 @@ function initNavigation() {
     const navMenu = document.querySelector('.nav-menu');
     const navLinks = document.querySelectorAll('.nav-link');
 
+    if (!navbar) {
+        console.warn('Navigation bar element not found. Skipping navigation initialization.');
+        return;
+    }
+
     // Navbar scroll effect
     window.addEventListener('scroll', () => {
+        if (!navbar) {
+            return;
+        }
+
         if (window.scrollY > 50) {
             navbar.classList.add('scrolled');
         } else {
@@ -122,111 +163,43 @@ function initSmoothScrolling() {
     });
 }
 
-// Enhanced scroll animations with Apple-style effects
+// Scroll animations using Intersection Observer
 function initScrollAnimations() {
-    // Add fade-in-up class to all sections
-    const sections = document.querySelectorAll('section');
-    sections.forEach(section => {
-        section.classList.add('fade-in-section');
-    });
-    
-    // Animate section headers
-    const sectionHeaders = document.querySelectorAll('.section-header');
-    const animatedElements = document.querySelectorAll(
-        '.service-card, .portfolio-item, .team-member, .process-step, .stat-item, .about-content > *, .contact-content > *, .contact-item'
-    );
+    const animatedElements = document.querySelectorAll('.service-card, .portfolio-item, .about-content > *, .contact-content > *');
     
     const observerOptions = {
-        threshold: 0.15,
-        rootMargin: '0px 0px -80px 0px'
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
     };
     
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                // Don't unobserve to allow re-triggering if needed
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
             }
         });
     }, observerOptions);
     
-    // Observe section headers with special animation
-    sectionHeaders.forEach((header, index) => {
-        header.classList.add('animate-header');
-        observer.observe(header);
-    });
-    
-    // Observe all animated elements
-    animatedElements.forEach((element, index) => {
-        element.classList.add('animate-element');
+    // Set initial state and observe elements
+    animatedElements.forEach(element => {
+        element.style.opacity = '0';
+        element.style.transform = 'translateY(30px)';
+        element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         observer.observe(element);
     });
 
-    // Stagger animations for grid items
+    // Stagger animation for service cards and portfolio items
     const serviceCards = document.querySelectorAll('.service-card');
     const portfolioItems = document.querySelectorAll('.portfolio-item');
-    const teamMembers = document.querySelectorAll('.team-member');
-    const processSteps = document.querySelectorAll('.process-step');
-    const statItems = document.querySelectorAll('.stat-item');
     
     serviceCards.forEach((card, index) => {
         card.style.transitionDelay = `${index * 0.1}s`;
     });
     
     portfolioItems.forEach((item, index) => {
-        item.style.transitionDelay = `${index * 0.12}s`;
+        item.style.transitionDelay = `${index * 0.15}s`;
     });
-    
-    teamMembers.forEach((member, index) => {
-        member.style.transitionDelay = `${index * 0.15}s`;
-    });
-    
-    processSteps.forEach((step, index) => {
-        step.style.transitionDelay = `${index * 0.08}s`;
-    });
-    
-    statItems.forEach((item, index) => {
-        item.style.transitionDelay = `${index * 0.1}s`;
-    });
-    
-    // Parallax scroll effect for backgrounds
-    initParallaxScroll();
-}
-
-// Apple-style parallax background scrolling
-function initParallaxScroll() {
-    const parallaxSections = document.querySelectorAll('section');
-    const body = document.body;
-    
-    window.addEventListener('scroll', throttle(() => {
-        const scrolled = window.pageYOffset;
-        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-        const scrollProgress = scrolled / maxScroll;
-        
-        // Subtle background shift
-        body.style.setProperty('--scroll-progress', scrollProgress);
-        
-        parallaxSections.forEach((section, index) => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.offsetHeight;
-            const sectionMiddle = sectionTop + (sectionHeight / 2);
-            const distance = scrolled - sectionMiddle;
-            const offset = distance * 0.03; // Subtle parallax factor
-            
-            // Apply parallax to pseudo-elements via CSS variables
-            section.style.setProperty('--parallax-offset', `${offset}px`);
-            
-            // Calculate visibility percentage
-            const viewportHeight = window.innerHeight;
-            const sectionBottom = sectionTop + sectionHeight;
-            const visibleTop = Math.max(sectionTop, scrolled);
-            const visibleBottom = Math.min(sectionBottom, scrolled + viewportHeight);
-            const visibleHeight = Math.max(0, visibleBottom - visibleTop);
-            const visibilityPercent = visibleHeight / viewportHeight;
-            
-            section.style.setProperty('--visibility', visibilityPercent);
-        });
-    }, 16), { passive: true });
 }
 
 // Typing animation for the logo cursor
@@ -275,7 +248,7 @@ function initContactForm() {
         // Set form loaded time for bot detection
         const formLoadedTime = document.getElementById('formLoadedTime');
         if (formLoadedTime) {
-            formLoadedTime.value = Date.now();
+            formLoadedTime.value = Date.now().toString();
         }
         
         form.addEventListener('submit', handleFormSubmit);
@@ -351,49 +324,58 @@ function handleFormSubmit(e) {
     btnLoading.style.display = 'inline';
     submitButton.disabled = true;
     
-    // Submit to Formspree
-    fetch(form.action, {
-        method: 'POST',
-        body: formData,
-        headers: {
-            'Accept': 'application/json'
-        }
-    })
-    .then(response => {
-        if (response.ok) {
-            // Success
+    // Ensure EmailJS is configured
+    if (
+        !window.emailjs ||
+        !EMAILJS_CONFIG.serviceId ||
+        !EMAILJS_CONFIG.templateId ||
+        !EMAILJS_CONFIG.publicKey ||
+        EMAILJS_CONFIG.serviceId.startsWith('YOUR_') ||
+        EMAILJS_CONFIG.templateId.startsWith('YOUR_') ||
+        EMAILJS_CONFIG.publicKey.startsWith('YOUR_')
+    ) {
+        console.error('EmailJS is not configured. Update EMAILJS_CONFIG in script.js.');
+        showNotification('Email service is not configured. Please try again later.', 'error');
+        btnText.style.display = 'inline';
+        btnLoading.style.display = 'none';
+        submitButton.disabled = false;
+        return;
+    }
+
+    const templateParams = {
+        from_name: formData.get('name'),
+        reply_to: formData.get('email'),
+        project_type: formData.get('project'),
+        message: formData.get('message'),
+        page_url: window.location.href,
+        submitted_at: new Date().toISOString()
+    };
+
+    emailjs.send(EMAILJS_CONFIG.serviceId, EMAILJS_CONFIG.templateId, templateParams)
+        .then(() => {
             showNotification('Thank you! Your message has been sent successfully. We\'ll get back to you within 24 hours.', 'success');
             form.reset();
-            
-            // Track form submission (optional analytics)
+            const formLoadedTimeInput = form.querySelector('#formLoadedTime');
+            if (formLoadedTimeInput) {
+                formLoadedTimeInput.value = Date.now().toString();
+            }
+
             if (typeof gtag !== 'undefined') {
                 gtag('event', 'form_submit', {
                     event_category: 'Contact',
                     event_label: 'Contact Form'
                 });
             }
-        } else {
-            // Handle Formspree errors
-            response.json().then(data => {
-                if (data.errors) {
-                    const errorMessages = data.errors.map(error => error.message).join(', ');
-                    showNotification(`Error: ${errorMessages}`, 'error');
-                } else {
-                    showNotification('Oops! There was a problem submitting your form. Please try again.', 'error');
-                }
-            });
-        }
-    })
-    .catch(error => {
-        console.error('Form submission error:', error);
-        showNotification('Oops! There was a problem submitting your form. Please try again or contact us directly.', 'error');
-    })
-    .finally(() => {
-        // Reset button state
-        btnText.style.display = 'inline';
-        btnLoading.style.display = 'none';
-        submitButton.disabled = false;
-    });
+        })
+        .catch(error => {
+            console.error('EmailJS submission error:', error);
+            showNotification('Oops! There was a problem submitting your form. Please try again or contact us directly.', 'error');
+        })
+        .finally(() => {
+            btnText.style.display = 'inline';
+            btnLoading.style.display = 'none';
+            submitButton.disabled = false;
+        });
 }
 
 // Validate entire form

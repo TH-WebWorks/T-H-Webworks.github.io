@@ -28,7 +28,7 @@
     <link rel="manifest" href="manifest.json">
     
     <!-- Theme colors for mobile browsers -->
-    <meta name="theme-color" content="#000000">
+    <meta name="theme-color" content="#ff6600">
     <meta name="msapplication-TileColor" content="#000000">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -345,10 +345,6 @@
                     </p>
                     <div class="stats-grid">
                         <div class="stat-item">
-                            <div class="stat-number">50+</div>
-                            <div class="stat-label">Projects Completed</div>
-                        </div>
-                        <div class="stat-item">
                             <div class="stat-number">100%</div>
                             <div class="stat-label">Client Satisfaction</div>
                         </div>
@@ -546,7 +542,7 @@
             </div>
             <div class="contact-content">
                 <div class="contact-form">
-                    <form id="contactForm" action="https://formspree.io/f/xvgrgqad" method="POST">
+                    <form id="contactForm" novalidate>
                         <div class="form-group">
                             <label for="name">Name</label>
                             <input type="text" id="name" name="name" required>
@@ -578,8 +574,6 @@
                         <input type="url" name="url" style="display:none !important" tabindex="-1" autocomplete="off">
                         <input type="text" name="security_check" style="display:none !important" tabindex="-1" autocomplete="off">
                         <input type="hidden" name="form_loaded_time" id="formLoadedTime">
-                        <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
-                        <input type="hidden" name="_subject" value="New Contact Form Submission - T&H WebWorks">
                         
                         <button type="submit" class="btn btn-primary">
                             <span class="btn-text">Send Message</span>
@@ -685,8 +679,11 @@
         </div>
     </footer>
 
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
+
     <!-- Optimized script loading -->
-    <script src="script.js" defer></script>
+    <script src="script.js?v=20251112" defer></script>
     
     <!-- Performance monitoring -->
     <script>
